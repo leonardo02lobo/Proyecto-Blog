@@ -1,0 +1,27 @@
+﻿@using Proyecto_Blog.Components.Pages
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+
+@if (mensajeRecibido.Equals("iniciarSesion")) {
+    <IniciarSesion mensaje="RecibirMensaje" />
+}
+else if (mensajeRecibido.Equals("crearCuenta"))
+{
+    <CrearCuenta  mensaje="RecibirMensaje"/>
+}else if(mensajeRecibido.Equals("Home"))
+{
+    <div class="container-fluid m-0 p-0" id="header">
+        <ContenidoHeader mensajeDatos="RecibirMensaje" />
+    </div>
+    <Home />
+}
+
+
+@code {
+    private string mensajeRecibido = "Home";
+
+    private void RecibirMensaje(string mensaje)
+    {
+        mensajeRecibido = mensaje;
+    }
+}

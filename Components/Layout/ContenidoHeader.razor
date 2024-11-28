@@ -1,0 +1,40 @@
+﻿<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <!-- Navegación del lado izquierdo -->
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img width="48" height="48" src="https://img.icons8.com/color/48/google-blog-search.png" alt="google-blog-search" />
+                Blog
+            </a>
+            <a class="nav-link active" aria-current="page" href="#">Hotel</a>
+            <a class="nav-link active" aria-current="page" href="#">Viajes</a>
+            <a class="nav-link active" aria-current="page" href="#">Alquileres de Carros</a>
+        </div>
+
+        <!-- Buscador en el centro -->
+        <form class="d-flex mx-auto" role="search" style="max-width: 400px;">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+        <!-- Botones a la derecha -->
+        <div class="d-flex gap-2">
+            <NavLink id="inicio" class="btn btn-primary" @onclick="EnviarMensajeiniciarSesion"><strong>Iniciar Sesión</strong></NavLink>
+            <button class="btn btn-secondary" @onclick="EnviarMensajeiniciarSesion2"><strong>Crear Cuenta</strong></button>
+        </div>
+    </div>
+</nav>
+
+@code {
+    [Parameter] public EventCallback<string> mensajeDatos { get; set; }
+
+    private async Task EnviarMensajeiniciarSesion()
+    {
+        await mensajeDatos.InvokeAsync("iniciarSesion");
+    }
+
+    private async Task EnviarMensajeiniciarSesion2()
+    {
+        await mensajeDatos.InvokeAsync("crearCuenta");
+    }
+}

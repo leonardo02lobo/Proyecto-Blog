@@ -1,0 +1,58 @@
+﻿
+@using Proyecto_Blog.Models
+<div class="container m-5">
+    <form @onsubmit="ValidateData">
+        <h3>Crear Cuenta</h3>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Ingrese su nombre de Usuario</label>
+            <input type="email" @bind="nombreUsuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="usuario">
+            <div id="emailHelp" class="form-text">Debe Ingresar su nombre de Usuario</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Ingrese su correo Electronico</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="correo electronico">
+            <div id="emailHelp" class="form-text">Debe Ingresar su correo electronico</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Ingrese su contraseña</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="contraseña">
+            <div id="emailHelp" class="form-text">Debe Ingresar su correo electronico</div>
+        </div>
+        <button type="button" class="btn btn-primary" @onclick="ValidateData">Crear Cuenta</button>
+        @if (band)
+        {
+            <div class="alert alert-danger" role="alert">
+                Usuario o Contraseña incorrecta. Intenta nuevamente!
+            </div>
+        }
+    </form>
+</div>
+
+@code {
+    [Parameter] public EventCallback<string> mensaje { get; set; }
+    private string nombreUsuario = "";
+    private string correo = "";
+    private string contrasenia = "";
+    private bool band = false;
+    private string Enviarmensaje = "";
+    string connectionString = "server=localhost;user=root;password=root1234;database=blog_proyecto";
+
+    private async Task ValidateData()
+    {
+        // MySqlConnection conexion = new MySqlConnection();
+        // Usuario usuario = new Usuario(nombreUsuario, correo, contrasenia);
+        // if (usuario.AgregarUsuario(new MySqlCommand("", conexion)))
+        // {
+        //     Enviarmensaje = "crearCuenta";
+        //     band = true;
+        //     return;
+        // }
+        await EnviarMensaje();
+    }
+
+    public async Task EnviarMensaje()
+    {
+        Enviarmensaje = "Home";
+        await mensaje.InvokeAsync(Enviarmensaje);
+    }
+}

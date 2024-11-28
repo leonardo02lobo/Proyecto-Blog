@@ -1,0 +1,47 @@
+﻿<div class="container m-5">
+    <form @onsubmit="ValidateData">
+        <h3>Iniciar Sesion</h3>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Ingresar Correo Electronico</label>
+            <input type="email" @bind="user" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo Electronico">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Ingresar La Contraseña</label>
+            <input type="password" @bind="password" class="form-control" id="exampleInputPassword1" placeholder="contraseña">
+        </div>
+        <button type="button" class="btn btn-primary" @onclick="ValidateData">Iniciar Sesion</button>
+        @if (band)
+        {
+            <div class="alert alert-danger" role="alert">
+                Usuario o Contraseña incorrecta. Intenta nuevamente!
+            </div>
+        }
+    </form>
+</div>
+
+@code {
+    [Parameter] public EventCallback<string> mensaje { get; set; }
+    private string userfalse = "Admin";
+    private string passwordfalse = "123";
+    private string user = "", password = "";
+    private bool band = false;
+    private string Enviarmensaje = "";
+
+    private async Task ValidateData()
+    {
+        if (!(user.Equals(userfalse) && password.Equals(passwordfalse)))
+        {
+            band = true;
+            Enviarmensaje = "iniciarSesion";
+            return;
+        }
+
+        await EnviarMensaje();
+    }
+
+    public async Task EnviarMensaje()
+    {
+        Enviarmensaje = "Home";
+        await mensaje.InvokeAsync(Enviarmensaje);
+    }
+}
