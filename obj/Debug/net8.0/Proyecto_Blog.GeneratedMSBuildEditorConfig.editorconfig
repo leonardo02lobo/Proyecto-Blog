@@ -9,53 +9,57 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Proyecto_Blog
 build_property.RootNamespace = Proyecto_Blog
-build_property.ProjectDir = C:\Users\equipo\Documents\Lenguajes de Programacion\C#\Proyecto_Blog\Proyecto_Blog\
+build_property.ProjectDir = C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\Proyecto_Blog\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\equipo\Documents\Lenguajes de Programacion\C#\Proyecto_Blog\Proyecto_Blog
+build_property.MSBuildProjectDirectory = C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\Proyecto_Blog
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/Proyecto_Blog/Proyecto_Blog/Components/App.razor]
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/Proyecto_Blog/Proyecto_Blog/Components/Layout/ContenidoHeader.razor]
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/Components/Layout/ContenidoHeader.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcQ29udGVuaWRvSGVhZGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/Proyecto_Blog/Proyecto_Blog/Components/Layout/Header.razor]
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/Components/Layout/Header.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcSGVhZGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/Proyecto_Blog/Proyecto_Blog/Components/Pages/CrearCuenta.razor]
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/Components/Pages/CrearCuenta.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDcmVhckN1ZW50YS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/Proyecto_Blog/Proyecto_Blog/Components/Pages/Home.razor]
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/Proyecto_Blog/Proyecto_Blog/Components/Pages/IniciarSesion.razor]
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/Components/Pages/IniciarSesion.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJbmljaWFyU2VzaW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/Proyecto_Blog/Proyecto_Blog/Components/Pages/TarjetasComponentes.razor]
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/Components/Pages/OlvidasteContrasenia.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xPbHZpZGFzdGVDb250cmFzZW5pYS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/Components/Pages/TarjetasComponentes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUYXJqZXRhc0NvbXBvbmVudGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/Proyecto_Blog/Proyecto_Blog/Components/Routes.razor]
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/Proyecto_Blog/Proyecto_Blog/Components/_Imports.razor]
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/Proyecto_Blog/Proyecto_Blog/Components/Layout/MainLayout.razor]
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-rs87dxallh

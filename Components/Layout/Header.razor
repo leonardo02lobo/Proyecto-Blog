@@ -3,7 +3,7 @@
 @inject NavigationManager Navigation
 
 @if (mensajeRecibido.Equals("iniciarSesion")) {
-    <IniciarSesion mensaje="RecibirMensaje" />
+    <IniciarSesion mensaje="RecibirMensajeTupla" />
 }
 else if (mensajeRecibido.Equals("crearCuenta"))
 {
@@ -11,7 +11,7 @@ else if (mensajeRecibido.Equals("crearCuenta"))
 }else if(mensajeRecibido.Equals("Home"))
 {
     <div class="container-fluid m-0 p-0" id="header">
-        <ContenidoHeader mensajeDatos="RecibirMensaje" />
+        <ContenidoHeader mensajeDatos="RecibirMensaje" Iniciado="band" />
     </div>
     <Home />
 }
@@ -19,9 +19,18 @@ else if (mensajeRecibido.Equals("crearCuenta"))
 
 @code {
     private string mensajeRecibido = "Home";
+    private bool band { get; set; }
 
+    private void RecibirMensajeTupla((string, bool) datos)
+    {
+        mensajeRecibido = datos.Item1;
+        if(datos.Item2){
+            band = true;
+        }
+    }
     private void RecibirMensaje(string mensaje)
     {
         mensajeRecibido = mensaje;
     }
+
 }

@@ -1,13 +1,19 @@
-﻿<div class="container m-5">
+﻿@using MySql.Data.MySqlClient
+@using Proyecto_Blog.Models
+
+<div class="container m-5">
     <form @onsubmit="ValidateData">
         <h3>Iniciar Sesion</h3>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Ingresar Correo Electronico</label>
-            <input type="email" @bind="user" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo Electronico">
+            <input type="email" @bind="correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo Electronico">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Ingresar La Contraseña</label>
-            <input type="password" @bind="password" class="form-control" id="exampleInputPassword1" placeholder="contraseña">
+            <input type="password" @bind="contrasenia" class="form-control" id="exampleInputPassword1" placeholder="contraseña">
+        </div>
+        <div class="mb-3">
+            <NavLink href="OlvidasteContrasenia"><a>Olvidaste tu contraseña</a></NavLink>
         </div>
         <button type="button" class="btn btn-primary" @onclick="ValidateData">Iniciar Sesion</button>
         @if (band)
@@ -20,28 +26,35 @@
 </div>
 
 @code {
-    [Parameter] public EventCallback<string> mensaje { get; set; }
-    private string userfalse = "Admin";
-    private string passwordfalse = "123";
-    private string user = "", password = "";
+    [Parameter] public EventCallback<(string,bool)> mensaje { get; set; }
+    private string correo = "", contrasenia = "";
     private bool band = false;
     private string Enviarmensaje = "";
 
     private async Task ValidateData()
     {
-        if (!(user.Equals(userfalse) && password.Equals(passwordfalse)))
+        Usuario usuario = new Usuario("", correo, contrasenia);
+        try
         {
-            band = true;
-            Enviarmensaje = "iniciarSesion";
-            return;
-        }
+            string query = $"select COUNT(*) from blog_prueba.usuarios where correo = '{usuario.getCorreo()}' and contrasenia  = '{usuario.getContraseniaEncriptada()}';";
+            MySqlCommand command = new MySqlCommand(query, usuario.conexion);
 
-        await EnviarMensaje();
+            if(usuario.ValidarUsusario(command)){
+                Enviarmensaje = "iniciarSesion";
+                band = true;
+                return;
+            }
+            await EnviarMensaje();
+        }catch(MySqlException e){
+            band = true;
+        }finally{
+            usuario.conexion.Close();
+        }
     }
 
     public async Task EnviarMensaje()
     {
         Enviarmensaje = "Home";
-        await mensaje.InvokeAsync(Enviarmensaje);
+        await mensaje.InvokeAsync((Enviarmensaje,true));
     }
 }
