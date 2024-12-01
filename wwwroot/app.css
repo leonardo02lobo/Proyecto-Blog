@@ -144,3 +144,8 @@ button {
     color: white;
     background-color: rgb(211, 201, 201, 0)
 }
+
+.imagenInicio{
+    border-radius: 50%;
+    width: 40px;
+}

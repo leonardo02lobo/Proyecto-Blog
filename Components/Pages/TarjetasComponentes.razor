@@ -1,16 +1,54 @@
-﻿<div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-        <div class="card">
-            <div class="card text-bg-dark">
-                <img src="/resource/photo_2024-11-21_06-10-18.jpg" class="card-img" alt="foto de una persona relax">
-                <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
+﻿@using MySql.Data.MySqlClient
+@using Proyecto_Blog.Models
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach(Tarjetas t in tarjetas){
+        <div class="col">
+            <div class="card" style="border: 2px solid black">
+                <div class="card text-bg-dark">
+                    <img src="/resource/photo_2024-11-21_06-10-18.jpg" class="card-img" alt="foto de una persona relax">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">@t.getEtiquetas()</h5>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@t.getTitulo()</h5>
+                    <p class="card-text">@t.getDescripcion()</p>
+                    <p class="card-text">@t.getPerfil()</p>
                 </div>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-        </div>
-    </div>
+		</div>
+	}
 </div>
+
+@code{
+    [Parameter] public Tarjetas tarjeta { get; set; }
+    private List<Tarjetas> tarjetas = new List<Tarjetas>();
+
+    protected override void OnInitialized()
+    {
+        AccederTablaTarjetas();
+    }
+
+    private void AccederTablaTarjetas()
+    {
+        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=blog_prueba;Uid=root;Pwd=root1234;");
+        try
+        {
+            connection.Open();
+            string query = "SELECT * FROM blog_prueba.tarjetas;";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            using (MySqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    tarjetas.Add(new Tarjetas(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4)));
+                }
+            }
+        }
+        finally
+        {
+            connection.Close();
+        }
+    }
+}

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pnPSjCrS0/U/tItntE/IotrgvSu/uONGiTCxAh0EHNY=",
+  "Hash": "zfdDL+EyawCIGgrY5uFgOlVu8Wghr4dktSRDU0OqP0E=",
   "Source": "Proyecto_Blog",
   "BasePath": "_content/Proyecto_Blog",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Proyecto_Blog\\wwwroot",
       "Source": "Proyecto_Blog",
-      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
       "BasePath": "_content/Proyecto_Blog",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Proyecto_Blog.styles.css",
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Proyecto_Blog.styles.css",
       "SourceId": "Proyecto_Blog",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Proyecto_Blog",
       "RelativePath": "Proyecto_Blog#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
@@ -35,13 +35,13 @@
       "Integrity": "ZzKCBp1DMvwcdu+DckDSrD4xIqX/9xQ5zdj7BvkfFxI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Proyecto_Blog.styles.css"
+      "OriginalItemSpec": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Proyecto_Blog.styles.css"
     },
     {
-      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Proyecto_Blog.bundle.scp.css",
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Proyecto_Blog.bundle.scp.css",
       "SourceId": "Proyecto_Blog",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Proyecto_Blog",
       "RelativePath": "Proyecto_Blog#[.{fingerprint}]!.bundle.scp.css",
       "AssetKind": "All",
@@ -56,13 +56,13 @@
       "Integrity": "ZzKCBp1DMvwcdu+DckDSrD4xIqX/9xQ5zdj7BvkfFxI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Proyecto_Blog.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Proyecto_Blog.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\app.css",
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\app.css",
       "SourceId": "Proyecto_Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
       "BasePath": "_content/Proyecto_Blog",
       "RelativePath": "app#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -73,17 +73,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "sx96h034bu",
-      "Integrity": "MKd+QW9of5PasjgrVHrIHBsEF+t4nB2RjbeKoAlF26c=",
+      "Fingerprint": "ugoi2kmfv1",
+      "Integrity": "ooEGQVwHRUqfg3auu39HFdIvbAdZ9YohcBpxoAOD59c=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "Proyecto_Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
       "BasePath": "_content/Proyecto_Blog",
       "RelativePath": "bootstrap/bootstrap.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -101,10 +101,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "Proyecto_Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
       "BasePath": "_content/Proyecto_Blog",
       "RelativePath": "bootstrap/bootstrap.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -122,10 +122,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\favicon.png",
       "SourceId": "Proyecto_Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
       "BasePath": "_content/Proyecto_Blog",
       "RelativePath": "favicon#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -143,10 +143,31 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\lupa.png",
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\avatar.png",
       "SourceId": "Proyecto_Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "BasePath": "_content/Proyecto_Blog",
+      "RelativePath": "resource/avatar#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "926e9x8ofz",
+      "Integrity": "z5z2aOjiMk79YD4Hd9KurDJNkj8j2qeQBveThQvbY2M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\resource\\avatar.png"
+    },
+    {
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\lupa.png",
+      "SourceId": "Proyecto_Blog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
       "BasePath": "_content/Proyecto_Blog",
       "RelativePath": "resource/lupa#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -164,10 +185,10 @@
       "OriginalItemSpec": "wwwroot\\resource\\lupa.png"
     },
     {
-      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\paisaje1.png",
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\paisaje1.png",
       "SourceId": "Proyecto_Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
       "BasePath": "_content/Proyecto_Blog",
       "RelativePath": "resource/paisaje1#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -185,10 +206,10 @@
       "OriginalItemSpec": "wwwroot\\resource\\paisaje1.png"
     },
     {
-      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\photo_2024-11-21_06-10-18.jpg",
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\photo_2024-11-21_06-10-18.jpg",
       "SourceId": "Proyecto_Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
       "BasePath": "_content/Proyecto_Blog",
       "RelativePath": "resource/photo_2024-11-21_06-10-18#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -209,7 +230,7 @@
   "Endpoints": [
     {
       "Route": "app.css",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\app.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -218,7 +239,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3974"
+          "Value": "4036"
         },
         {
           "Name": "Content-Type",
@@ -226,11 +247,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MKd+QW9of5PasjgrVHrIHBsEF+t4nB2RjbeKoAlF26c=\""
+          "Value": "\"ooEGQVwHRUqfg3auu39HFdIvbAdZ9YohcBpxoAOD59c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 23:50:38 GMT"
+          "Value": "Sat, 30 Nov 2024 23:42:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -240,13 +261,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-MKd+QW9of5PasjgrVHrIHBsEF+t4nB2RjbeKoAlF26c="
+          "Value": "sha256-ooEGQVwHRUqfg3auu39HFdIvbAdZ9YohcBpxoAOD59c="
         }
       ]
     },
     {
-      "Route": "app.sx96h034bu.css",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\app.css",
+      "Route": "app.ugoi2kmfv1.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -255,7 +276,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3974"
+          "Value": "4036"
         },
         {
           "Name": "Content-Type",
@@ -263,11 +284,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MKd+QW9of5PasjgrVHrIHBsEF+t4nB2RjbeKoAlF26c=\""
+          "Value": "\"ooEGQVwHRUqfg3auu39HFdIvbAdZ9YohcBpxoAOD59c=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 23:50:38 GMT"
+          "Value": "Sat, 30 Nov 2024 23:42:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -277,7 +298,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "sx96h034bu"
+          "Value": "ugoi2kmfv1"
         },
         {
           "Name": "label",
@@ -285,13 +306,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-MKd+QW9of5PasjgrVHrIHBsEF+t4nB2RjbeKoAlF26c="
+          "Value": "sha256-ooEGQVwHRUqfg3auu39HFdIvbAdZ9YohcBpxoAOD59c="
         }
       ]
     },
     {
       "Route": "bootstrap/bootstrap.min.bpk8xqwxhs.css",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -336,7 +357,7 @@
     },
     {
       "Route": "bootstrap/bootstrap.min.css",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -373,7 +394,7 @@
     },
     {
       "Route": "bootstrap/bootstrap.min.css.8inm30yfxf.map",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -418,7 +439,7 @@
     },
     {
       "Route": "bootstrap/bootstrap.min.css.map",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -455,7 +476,7 @@
     },
     {
       "Route": "favicon.ifv42okdf2.png",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\favicon.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\favicon.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -500,7 +521,7 @@
     },
     {
       "Route": "favicon.png",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\favicon.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\favicon.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -537,7 +558,7 @@
     },
     {
       "Route": "Proyecto_Blog.bundle.scp.css",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Proyecto_Blog.bundle.scp.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Proyecto_Blog.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -574,7 +595,7 @@
     },
     {
       "Route": "Proyecto_Blog.fyhuo5js3c.bundle.scp.css",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Proyecto_Blog.bundle.scp.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Proyecto_Blog.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -619,7 +640,7 @@
     },
     {
       "Route": "Proyecto_Blog.fyhuo5js3c.styles.css",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Proyecto_Blog.styles.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Proyecto_Blog.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -664,7 +685,7 @@
     },
     {
       "Route": "Proyecto_Blog.styles.css",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Proyecto_Blog.styles.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Proyecto_Blog.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -700,8 +721,90 @@
       ]
     },
     {
+      "Route": "resource/avatar.926e9x8ofz.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\avatar.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "64350"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z5z2aOjiMk79YD4Hd9KurDJNkj8j2qeQBveThQvbY2M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 30 Nov 2024 23:42:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "926e9x8ofz"
+        },
+        {
+          "Name": "label",
+          "Value": "resource/avatar.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-z5z2aOjiMk79YD4Hd9KurDJNkj8j2qeQBveThQvbY2M="
+        }
+      ]
+    },
+    {
+      "Route": "resource/avatar.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\avatar.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "64350"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z5z2aOjiMk79YD4Hd9KurDJNkj8j2qeQBveThQvbY2M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 30 Nov 2024 23:42:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-z5z2aOjiMk79YD4Hd9KurDJNkj8j2qeQBveThQvbY2M="
+        }
+      ]
+    },
+    {
       "Route": "resource/lupa.70vxcss8tg.png",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\lupa.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\lupa.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -746,7 +849,7 @@
     },
     {
       "Route": "resource/lupa.png",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\lupa.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\lupa.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -783,7 +886,7 @@
     },
     {
       "Route": "resource/paisaje1.1tudupaz7f.png",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\paisaje1.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\paisaje1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -828,7 +931,7 @@
     },
     {
       "Route": "resource/paisaje1.png",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\paisaje1.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\paisaje1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -865,7 +968,7 @@
     },
     {
       "Route": "resource/photo_2024-11-21_06-10-18.ekfhn19zsc.jpg",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\photo_2024-11-21_06-10-18.jpg",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\photo_2024-11-21_06-10-18.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -910,7 +1013,7 @@
     },
     {
       "Route": "resource/photo_2024-11-21_06-10-18.jpg",
-      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\photo_2024-11-21_06-10-18.jpg",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\photo_2024-11-21_06-10-18.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {

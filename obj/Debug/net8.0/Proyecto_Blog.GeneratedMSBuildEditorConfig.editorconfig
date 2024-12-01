@@ -32,6 +32,13 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcSGVhZGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+=======
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/Components/Pages/AgregarTarjeta.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZ3JlZ2FyVGFyamV0YS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+>>>>>>> 3800691a3fddc12b508c955e06f21ae82b848300
 [C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/Components/Pages/CrearCuenta.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDcmVhckN1ZW50YS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,6 +51,13 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJbmljaWFyU2VzaW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+=======
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/Components/Pages/OlvidasteContrasenia.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xPbHZpZGFzdGVDb250cmFzZW5pYS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+>>>>>>> 3800691a3fddc12b508c955e06f21ae82b848300
 [C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/Components/Pages/TarjetasComponentes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUYXJqZXRhc0NvbXBvbmVudGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

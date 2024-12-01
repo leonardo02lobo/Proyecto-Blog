@@ -1,27 +1,34 @@
 ﻿using System.Security.Cryptography;
+using System.Text;
 
 namespace Proyecto_Blog.Models
 {
     public class EncriptarContrasenia
     {
 
-        public static string HashPassword(string password)
+        public static string EncriptarContraseña(string contraseña)
         {
-            // Generar un salt único
-            using (var rng = new RNGCryptoServiceProvider())
+            // Salt fijo (esto reduce seguridad, usar con precaución)
+            string saltFijo = "SaltFijoSeguridad123!@#";
+
+            // Combinar contraseña con el salt
+            string contraseñaConSalt = contraseña + saltFijo;
+
+            // Convertir la cadena a bytes
+            byte[] bytes = Encoding.UTF8.GetBytes(contraseñaConSalt);
+
+            // Crear el hash usando SHA256
+            using (SHA256 sha256 = SHA256.Create())
             {
-                byte[] saltBytes = new byte[16];
-                rng.GetBytes(saltBytes);
-                string salt = Convert.ToBase64String(saltBytes);
+                byte[] hashBytes = sha256.ComputeHash(bytes);
 
-                // Crear el hash de la contraseña con el salt
-                using (var pbkdf2 = new Rfc2898DeriveBytes(password, saltBytes, 10000))
+                // Convertir el hash a una cadena hexadecimal
+                StringBuilder hash = new StringBuilder();
+                foreach (byte b in hashBytes)
                 {
-                    byte[] hashBytes = pbkdf2.GetBytes(32);
-                    string hashedPassword = Convert.ToBase64String(hashBytes);
-
-                    return hashedPassword;
+                    hash.Append(b.ToString("x2"));
                 }
+                return hash.ToString();
             }
         }
     }
