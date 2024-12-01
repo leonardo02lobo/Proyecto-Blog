@@ -1,4 +1,5 @@
 ﻿@using Proyecto_Blog.Components.Pages
+@using Proyecto_Blog.Models
 @rendermode InteractiveServer
 @inject NavigationManager Navigation
 
@@ -13,20 +14,24 @@ else if (mensajeRecibido.Equals("crearCuenta"))
     <div class="container-fluid m-0 p-0" id="header">
         <ContenidoHeader mensajeDatos="RecibirMensaje" Iniciado="band" />
     </div>
-    <Home />
+    <Home Iniciado="band" mensaje="RecibirMensaje"/>
+}else if(mensajeRecibido.Equals("AgregarTarjeta")){
+    <AgregarTarjeta mensaje="RecibirMensaje" datosSesionUsuario="usuarioSesion"/>
 }
 
 
 @code {
     private string mensajeRecibido = "Home";
     private bool band { get; set; }
+    private Usuario usuarioSesion { get; set; }
 
-    private void RecibirMensajeTupla((string, bool) datos)
+    private void RecibirMensajeTupla((string, bool,Usuario) datos)
     {
         mensajeRecibido = datos.Item1;
         if(datos.Item2){
             band = true;
         }
+        usuarioSesion = datos.Item3;
     }
     private void RecibirMensaje(string mensaje)
     {

@@ -1,0 +1,60 @@
+﻿@using MySql.Data.MySqlClient
+@using Proyecto_Blog.Models
+@rendermode InteractiveServer
+
+<div class="container justify-content-center text-center">
+    <div class="row align-items-start">
+        <div class="col m-5">
+            <h1>Agregar Una Nueva Tarjeta</h1>
+            <p>Agregue la Informacion necesaria y presione el boton de agregar</p>
+            <div class="mb-3">
+                <label class="form-label">Titulo De la tarjeta</label>
+                <input type="text" @bind="titulo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Descripcion de la Tarjeta</label>
+                <textarea class="form-control" @bind="descripcion" id="exampleInputPassword1"></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Etiqueta de la Tarjeta</label>
+                <input type="text" @bind="etiqueta" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btn btn-primary" @onclick="Agregar">Agregar</button>
+            <p>@datosSesionUsuario.getNombreUsuario()</p>
+            <p>@datosSesionUsuario.getCorreo()</p>
+        </div>
+        <div class="col m-5">
+            <h2>Vista Previa</h2>
+            <div class="card" style="border: 2px solid black">
+                <div class="card text-bg-dark"> 
+                    <img src="/resource/photo_2024-11-21_06-10-18.jpg" class="card-img" alt="foto de una persona relax"> 
+                    <div class="card-img-overlay"> 
+                        <h5 class="card-title">@etiqueta</h5> 
+                    </div> 
+                </div> 
+                <div class="card-body"> 
+                    <h5 class="card-title">@titulo</h5> 
+                    <p class="card-text">@descripcion</p> 
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code{
+    [Parameter] public EventCallback<string> mensaje { get; set; }
+    private Tarjetas tarjetas;
+    [Parameter] public Usuario datosSesionUsuario { get; set; }
+    private string etiqueta = "", titulo = "", descripcion = "";
+
+    private async Task Agregar(){
+        tarjetas = new Tarjetas(etiqueta,titulo,descripcion,datosSesionUsuario.getNombreUsuario(),0);
+        await EnviarMensaje();
+        await tarjetas.InsetarElementos(new MySqlConnection("Server=localhost;Database=blog_prueba;Uid=root;Pwd=root1234;"));
+    }
+
+    public async Task EnviarMensaje(){
+        await mensaje.InvokeAsync("Home");
+    }
+}

@@ -26,20 +26,22 @@
 </div>
 
 @code {
-    [Parameter] public EventCallback<(string,bool)> mensaje { get; set; }
+    [Parameter] public EventCallback<(string,bool,Usuario)> mensaje { get; set; }
     private string correo = "", contrasenia = "";
     private bool band = false;
     private string Enviarmensaje = "";
+    Usuario usuario;
 
     private async Task ValidateData()
     {
-        Usuario usuario = new Usuario("", correo, contrasenia);
+        usuario = new Usuario("", correo, contrasenia);
         try
         {
-            string query = $"select COUNT(*) from blog_prueba.usuarios where correo = '{usuario.getCorreo()}' and contrasenia  = '{usuario.getContraseniaEncriptada()}';";
+            string query = $"select id,nombreUsuario from blog_prueba.usuarios where correo = '{usuario.getCorreo()}' and contrasenia  = '{usuario.getContraseniaEncriptada()}';";
             MySqlCommand command = new MySqlCommand(query, usuario.conexion);
-
-            if(usuario.ValidarUsusario(command)){
+            (bool band, string nombreUsuario) = usuario.ValidarUsusario(command);
+            usuario.setNombreUsuario(nombreUsuario);
+            if(band){
                 Enviarmensaje = "iniciarSesion";
                 band = true;
                 return;
@@ -55,6 +57,6 @@
     public async Task EnviarMensaje()
     {
         Enviarmensaje = "Home";
-        await mensaje.InvokeAsync((Enviarmensaje,true));
+        await mensaje.InvokeAsync((Enviarmensaje,true,usuario));
     }
 }

@@ -22,6 +22,11 @@ namespace Proyecto_Blog.Models
             this.correo = correo;
             this.contrasenia = contrasenia;
         }
+
+        public void setNombreUsuario(string nombreUsuario)
+        {
+            this.nombreUsuario = nombreUsuario;
+        }
         public string getNombreUsuario()
         {
             return nombreUsuario;
@@ -50,10 +55,21 @@ namespace Proyecto_Blog.Models
             }
         }
 
-        public bool ValidarUsusario(MySqlCommand command)
+        public (bool,string) ValidarUsusario(MySqlCommand command)
         {
-            Iniciado = Convert.ToInt32(command.ExecuteScalar()) <= 0;
-            return Iniciado;
+            string nombreUsuario = "";
+
+            using(MySqlDataReader reader = command.ExecuteReader())
+            {
+                while(reader.Read())
+                {
+                    Iniciado = reader.GetInt32(0) <= 0;
+                    nombreUsuario = reader.GetString(1);
+                }
+            
+            return (Iniciado,nombreUsuario);
+            }
+            
         }
     }
 }
