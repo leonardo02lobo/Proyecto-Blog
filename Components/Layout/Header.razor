@@ -11,13 +11,21 @@ else if (mensajeRecibido.Equals("crearCuenta"))
     <CrearCuenta  mensaje="RecibirMensaje"/>
 }else if(mensajeRecibido.Equals("Home"))
 {
-    <div class="container-fluid m-0 p-0" id="header">
-        <ContenidoHeader mensajeDatos="RecibirMensaje" Iniciado="band" />
-    </div>
-    <Home Iniciado="band" mensaje="RecibirMensaje"/>
+    
+    <ContenidoHeader mensajeDatos="RecibirMensaje" Iniciado="band" />
+    @* <Home Iniciado="band" mensaje="RecibirMensaje"/> *@
 }else if(mensajeRecibido.Equals("AgregarTarjeta")){
     <AgregarTarjeta mensaje="RecibirMensaje" datosSesionUsuario="usuarioSesion"/>
 }
+else if (mensajeRecibido.Equals("Recuperar"))
+{
+    <RecuperarContrasenia mensaje="RecibirMensaje"/>
+}
+else if (mensajeRecibido.Equals("Perfil"))
+{
+    <Perfil usuario="usuarioSesion"/>
+}
+
 
 
 @code {

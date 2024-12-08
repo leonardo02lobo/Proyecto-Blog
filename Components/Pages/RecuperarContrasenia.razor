@@ -1,0 +1,46 @@
+﻿@using Proyecto_Blog.Models
+@rendermode InteractiveServer
+
+<form @onsubmit="ComprobarContrasenia">
+    <h3>Cambiar Contraseña</h3>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Digite el correo</label>
+        <input type="email" @bind="correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nueva Contraseña</label>
+        <input type="password" @bind="contraseniaNueva" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Vuelva a Digitar la Contraseña</label>
+        <input type="password" @bind="digitarContrasenia" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary" @onclick="ComprobarContrasenia">Cambiar Contraseña</button>
+    @if(band){
+        <div class="alert alert-danger" role="alert">
+            @mensajeError
+            <script>alert('Contraseñas diferentes. Intentar mas tarde')</script>
+        </div>
+    }
+</form>
+
+@code{
+    [Parameter] public EventCallback<string> mensaje { get; set; }
+    private string correo = "", contraseniaNueva = "", digitarContrasenia = "", Enviarmensaje = "iniciarSesion",mensajeError = "";
+    private bool band = false;
+
+    private async Task ComprobarContrasenia(){
+
+        if(contraseniaNueva != digitarContrasenia){
+            band = true;
+            return;
+        }
+        Usuario usuario = new Usuario("",correo,contraseniaNueva);
+        mensajeError = usuario.CambiarContrasenia();
+        await EnviarMensaje();
+    }
+
+    public async Task EnviarMensaje(){
+        await mensaje.InvokeAsync(Enviarmensaje);
+    }
+}

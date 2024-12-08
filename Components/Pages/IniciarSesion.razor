@@ -13,7 +13,7 @@
             <input type="password" @bind="contrasenia" class="form-control" id="exampleInputPassword1" placeholder="contraseña">
         </div>
         <div class="mb-3">
-            <NavLink href="OlvidasteContrasenia"><a>Olvidaste tu contraseña</a></NavLink>
+            <a href="" @onclick="Recuperar">Olvidaste tu contraseña</a>
         </div>
         <button type="button" class="btn btn-primary" @onclick="ValidateData">Iniciar Sesion</button>
         @if (band)
@@ -28,7 +28,7 @@
 @code {
     [Parameter] public EventCallback<(string,bool,Usuario)> mensaje { get; set; }
     private string correo = "", contrasenia = "";
-    private bool band = false;
+    private bool band = false, cambiarContrasenia = true;
     private string Enviarmensaje = "";
     Usuario usuario;
 
@@ -37,12 +37,11 @@
         usuario = new Usuario("", correo, contrasenia);
         try
         {
-            string query = $"select id,nombreUsuario from blog_prueba.usuarios where correo = '{usuario.getCorreo()}' and contrasenia  = '{usuario.getContraseniaEncriptada()}';";
+            string query = $"select * from blog_prueba.usuarios where correo = '{usuario.getCorreo()}' and contrasenia  = '{usuario.getContraseniaEncriptada()}';";
             MySqlCommand command = new MySqlCommand(query, usuario.conexion);
-            (bool band, string nombreUsuario) = usuario.ValidarUsusario(command);
+            (bool band2, string nombreUsuario) = usuario.ValidarUsusario(command);
             usuario.setNombreUsuario(nombreUsuario);
-            if(band){
-                Enviarmensaje = "iniciarSesion";
+            if(!band2){
                 band = true;
                 return;
             }
@@ -52,6 +51,11 @@
         }finally{
             usuario.conexion.Close();
         }
+    }
+
+    private async Task Recuperar(){
+        Enviarmensaje = "Recuperar";
+        await mensaje.InvokeAsync((Enviarmensaje,false, null));
     }
 
     public async Task EnviarMensaje()

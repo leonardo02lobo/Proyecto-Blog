@@ -9,11 +9,12 @@ namespace Proyecto_Blog.Models
         private string titulo { get; set; } = "";
         private string descripcion { get; set; } = "";
         private string perfil { get; set; } = "";
+        private string urlImagen { get; set; } = "";
         private int idPerfil { get; set; } = 0;
         public MySqlConnection conexion;
         private string connectionString = "Server=localhost;Database=blog_prueba;Uid=root;Pwd=root1234;";
 
-        public Tarjetas(string etiqueta,string titulo,string descripcion,string perfil, int idPerifil)
+        public Tarjetas(string etiqueta,string titulo,string descripcion,string perfil, int idPerifil,string urlImagen)
         {
             conexion = new MySqlConnection(connectionString);
             conexion.Open();
@@ -22,6 +23,7 @@ namespace Proyecto_Blog.Models
             this.descripcion = descripcion;
             this.perfil = perfil;
             this.idPerfil = idPerfil;
+            this.urlImagen = urlImagen;
         }
 
         public string getEtiquetas() => etiqueta;
@@ -29,13 +31,14 @@ namespace Proyecto_Blog.Models
         public string getDescripcion() => descripcion;
         public string getPerfil() => perfil;
         public int getIdPerfil() => idPerfil;
+        public string getUrlImagen() => urlImagen;
 
         public async Task InsetarElementos(MySqlConnection connection)
         {
             try
             {
-                string query = "insert into blog_prueba.tarjetas(etiqueta,titulo,descripcion,perfil,id) " +
-                "values (?etiqueta,?titulo,?descripcion,?perfil,?id);";
+                string query = "insert into blog_prueba.tarjetas(etiqueta,titulo,descripcion,perfil,id,urlImagen) " +
+                "values (?etiqueta,?titulo,?descripcion,?perfil,?id,?urlImagen);";
                 connection.Open();
                 MySqlCommand command = new MySqlCommand(query, connection);
 
@@ -44,6 +47,7 @@ namespace Proyecto_Blog.Models
                 command.Parameters.Add("?descripcion", MySqlDbType.VarChar).Value = getDescripcion();
                 command.Parameters.Add("?perfil", MySqlDbType.VarChar).Value = getPerfil();
                 command.Parameters.Add("?id", MySqlDbType.Int32).Value = ObtenerIdPerfil(connection);
+                command.Parameters.Add("?urlImagen", MySqlDbType.VarChar).Value = getUrlImagen();
 
                 await command.ExecuteNonQueryAsync();
             }finally

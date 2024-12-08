@@ -1,0 +1,57 @@
+﻿@using Proyecto_Blog.Models
+@inject IJSRuntime JS
+
+
+<div class="align-items-center m-4">
+	<h3>Perfil de @usuario.getNombreUsuario()</h3>
+	<div class="container border border-secondary" style="padding: 30px;">
+		<div class="row align-items-start">
+			<div class="col">
+				<img style="border-radius: 50%; width: 300px;" src="/resource/avatar.png" alt="Avatar" />
+			</div>
+			<div class="col">
+				<p style="margin:30px; font-size:20px;">Nombre: @usuario.getNombreUsuario()</p>
+				<button id="miBoton1" type="submit" class="btn btn-primary" @onclick="Cambiar1">Cambiar Nombre Usuario</button>
+				<p style="margin:30px; font-size:20px;">Correo: @usuario.getCorreo()</p>
+				<button id="miBoton2" type="submit" class="btn btn-primary" @onclick="Cambiar2">Cambiar Correo Electronico</button>
+				<p style="margin:30px; font-size:20px;">Contraseña: @usuario.getContraseniaEncriptada()</p>
+				<button id="miBoton3" type="submit" class="btn btn-primary" @onclick="Cambiar3">Cambiar Contraseña</button>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary" @onclick="Ocultar">Ocultar Cambiar Datos</button>
+	</div>
+	@if (band)
+	{
+		<CambiarDatos datoCambiar=@texto usuarioSeleccionado="usuario"/>
+	}
+</div>
+
+
+<script>
+	window.getButtonText = (id) =>{
+	return document.getElementById(id).innerText;
+	};
+</script>
+
+@code {
+	[Parameter] public Usuario usuario { get; set; }
+	private string texto { get; set; } = "";
+	private bool band = false;
+
+	private async Task Cambiar1(){
+		band = true;
+		texto = await JS.InvokeAsync<string>("getButtonText", "miBoton1");
+	}
+	private async Task Cambiar2(){
+		band = true;
+		texto = await JS.InvokeAsync<string>("getButtonText", "miBoton2");
+	}
+	private async Task Cambiar3()
+	{
+		band = true;
+		texto = await JS.InvokeAsync<string>("getButtonText", "miBoton3");
+	}
+	private void Ocultar(){
+		band = false;
+	}
+}

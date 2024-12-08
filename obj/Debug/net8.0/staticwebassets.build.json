@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zfdDL+EyawCIGgrY5uFgOlVu8Wghr4dktSRDU0OqP0E=",
+  "Hash": "voLuMRCZj9pfs9Xn4UQKIDJIrsyJXout/uYXYV1Dj9c=",
   "Source": "Proyecto_Blog",
   "BasePath": "_content/Proyecto_Blog",
   "Mode": "Default",
@@ -57,6 +57,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Proyecto_Blog.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\anznznjk.440~",
+      "SourceId": "Proyecto_Blog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "BasePath": "_content/Proyecto_Blog",
+      "RelativePath": "anznznjk#[.{fingerprint}]?.440~",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gls889rg3p",
+      "Integrity": "PEFbBh+Ww+2niH10tOYkT/kXca+lNQgLvm5oqcSx3m4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\anznznjk.440~"
     },
     {
       "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\app.css",
@@ -229,6 +250,88 @@
   ],
   "Endpoints": [
     {
+      "Route": "anznznjk.440~",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\anznznjk.440~",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4083"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PEFbBh+Ww+2niH10tOYkT/kXca+lNQgLvm5oqcSx3m4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Dec 2024 23:43:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PEFbBh+Ww+2niH10tOYkT/kXca+lNQgLvm5oqcSx3m4="
+        }
+      ]
+    },
+    {
+      "Route": "anznznjk.gls889rg3p.440~",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\anznznjk.440~",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4083"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PEFbBh+Ww+2niH10tOYkT/kXca+lNQgLvm5oqcSx3m4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Dec 2024 23:43:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gls889rg3p"
+        },
+        {
+          "Name": "label",
+          "Value": "anznznjk.440~"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PEFbBh+Ww+2niH10tOYkT/kXca+lNQgLvm5oqcSx3m4="
+        }
+      ]
+    },
+    {
       "Route": "app.css",
       "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\app.css",
       "Selectors": [],
@@ -251,7 +354,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 23:42:43 GMT"
+          "Value": "Mon, 02 Dec 2024 01:09:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -288,7 +391,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 23:42:43 GMT"
+          "Value": "Mon, 02 Dec 2024 01:09:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -743,7 +846,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 23:42:43 GMT"
+          "Value": "Sun, 01 Dec 2024 20:29:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -788,7 +891,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 23:42:43 GMT"
+          "Value": "Sun, 01 Dec 2024 20:29:17 GMT"
         },
         {
           "Name": "Cache-Control",

@@ -5,7 +5,7 @@
         <h3>Crear Cuenta</h3>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Ingrese su nombre de Usuario</label>
-            <input type="email" @bind="nombreUsuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="usuario">
+            <input type="text" @bind="nombreUsuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="usuario">
             <div id="emailHelp" class="form-text">Debe Ingresar su nombre de Usuario</div>
         </div>
         <div class="mb-3">
@@ -40,14 +40,15 @@
 
     private async Task ValidateData()
     {
-        
+        if(!validarCorreo()){
+            band = true;
+            return;
+        }
         Usuario usuario = new Usuario(nombreUsuario, correo, contrasenia);
         try
         {
             if(nombreUsuario == "" && correo == "" && contrasenia == ""){
-                Enviarmensaje = "crearCuenta";
                 band = true;
-                Thread.Sleep(2000);
                 return;
             }
             string query = "insert into blog_prueba.usuarios(nombreUsuario,correo,contrasenia) values (?nombreUsuario,?correo,?contrasenia);";
@@ -62,5 +63,15 @@
     {
         Enviarmensaje = "Home";
         await mensaje.InvokeAsync(Enviarmensaje);
+    }
+
+    private bool validarCorreo(){
+        string[] LetrasEmail = correo.Split("@");
+        for(int i = 0; i < LetrasEmail.Length;i++){
+            if(LetrasEmail[i].Equals("gmail.com")){
+                return true;
+            }
+        }
+        return false;
     }
 }

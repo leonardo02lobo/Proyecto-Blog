@@ -1,11 +1,19 @@
 ﻿@using MySql.Data.MySqlClient
 @using Proyecto_Blog.Models
+
+<style>
+    #tarjeta:hover {
+        box-shadow: 30px 30px 30px #000;
+        transition: .5s all;
+    }
+</style>
+
 <div class="row row-cols-1 row-cols-md-3 g-4">
     @foreach(Tarjetas t in tarjetas){
         <div class="col">
-            <div class="card" style="border: 2px solid black">
+            <div class="card" style="border: 2px solid black" id="tarjeta">
                 <div class="card text-bg-dark">
-                    <img src="/resource/photo_2024-11-21_06-10-18.jpg" class="card-img" alt="foto de una persona relax">
+                    <img src="@t.getUrlImagen()" class="card-img" alt="foto de una persona relax">
                     <div class="card-img-overlay">
                         <h5 class="card-title">@t.getEtiquetas()</h5>
                     </div>
@@ -13,7 +21,10 @@
                 <div class="card-body">
                     <h5 class="card-title">@t.getTitulo()</h5>
                     <p class="card-text">@t.getDescripcion()</p>
-                    <p class="card-text">@t.getPerfil()</p>
+                    <div class="col d-flex">
+                        <img style="border-radius: 50%; width: 40px;" src="/resource/avatar.png" alt="Avatar" />
+                        <p class="card-text">@t.getPerfil()</p>
+                    </div>
                 </div>
             </div>
 		</div>
@@ -42,7 +53,7 @@
             {
                 while (reader.Read())
                 {
-                    tarjetas.Add(new Tarjetas(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4)));
+                    tarjetas.Add(new Tarjetas(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4),reader.GetString(5)));
                 }
             }
         }

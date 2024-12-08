@@ -1,0 +1,64 @@
+﻿@using MySql.Data.MySqlClient
+@using Proyecto_Blog.Models
+
+<h3>@datoCambiar</h3>
+<div class="container border border-secondary" style="padding: 30px;">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Digite su nuevo valor a cambiar</label>
+        <input type="text" @bind="valor1" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Confirmar el nuevo valor</label>
+        <input type="text" @bind="valor2" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary" @onclick="EnviarDatosDatabase">Cambiar</button>
+    <p>Mensaje: @mensaje</p>
+</div>
+
+@code {
+    [Parameter] public string datoCambiar { get; set; }
+    [Parameter] public Usuario usuarioSeleccionado { get; set; }
+    private string valor1 = "", valor2 = "", mensaje = "";
+
+    private async Task EnviarDatosDatabase(){
+        usuarioSeleccionado.AbrirConection();
+        if(valor1 != valor2){
+            mensaje = "Verificar si son iguales. Los datos que ingresaste no coinciden";
+            return;
+        }
+
+        string NombreColumna = "", opcion = "", valorOriginal = "";
+        try
+        {   
+            if (datoCambiar.Equals("Cambiar Nombre Usuario"))
+            {
+                NombreColumna = "NombreUsuario";
+                opcion = "correo";
+                valorOriginal = usuarioSeleccionado.getCorreo();
+            }
+            else if (datoCambiar.Equals("Cambiar Correo Electronico"))
+            {
+                NombreColumna = "correo";
+                opcion = "NombreUsuario";
+                valorOriginal = usuarioSeleccionado.getNombreUsuario();
+            }
+            else if (datoCambiar.Equals("Cambiar Contraseña"))
+            {
+                NombreColumna = "contrasenia";
+                opcion = "correo";
+                valorOriginal = usuarioSeleccionado.getCorreo();
+            }
+            string query = $"update blog_prueba.usuarios set {NombreColumna} = ?valorColumna where {opcion} = ?valorOriginal;";
+            MySqlCommand command = new MySqlCommand(query, usuarioSeleccionado.conexion);
+
+            command.Parameters.Add("?ValorColumna", MySqlDbType.VarChar).Value = valor1;
+            command.Parameters.Add("?valorOriginal", MySqlDbType.VarChar).Value = valorOriginal;
+
+            await command.ExecuteNonQueryAsync();
+        }catch(InvalidOperationException e){
+            mensaje = e.Message;
+        }catch(MySqlException e){
+            mensaje = e.Message;
+        }
+    }
+}

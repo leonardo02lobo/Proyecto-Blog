@@ -16,18 +16,25 @@
                 <textarea class="form-control" @bind="descripcion" id="exampleInputPassword1"></textarea>
             </div>
             <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Agregar URL de la Imagen</label>
+                <input type="text" @bind="urlImagen" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
                 <label class="form-label">Etiqueta de la Tarjeta</label>
                 <input type="text" @bind="etiqueta" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <button type="submit" class="btn btn-primary" @onclick="Agregar">Agregar</button>
-            <p>@datosSesionUsuario.getNombreUsuario()</p>
-            <p>@datosSesionUsuario.getCorreo()</p>
         </div>
+        @if (band)
+        {
+            <script>alert('No a Ingresado todos los datos, intentelo mas tarde')</script>
+            @EnviarMensaje()
+        }
         <div class="col m-5">
             <h2>Vista Previa</h2>
             <div class="card" style="border: 2px solid black">
                 <div class="card text-bg-dark"> 
-                    <img src="/resource/photo_2024-11-21_06-10-18.jpg" class="card-img" alt="foto de una persona relax"> 
+                    <img src="@urlImagen" class="card-img" alt="foto de una persona relax"> 
                     <div class="card-img-overlay"> 
                         <h5 class="card-title">@etiqueta</h5> 
                     </div> 
@@ -46,12 +53,17 @@
     [Parameter] public EventCallback<string> mensaje { get; set; }
     private Tarjetas tarjetas;
     [Parameter] public Usuario datosSesionUsuario { get; set; }
-    private string etiqueta = "", titulo = "", descripcion = "";
+    private string etiqueta = "", titulo = "", descripcion = "",urlImagen = "";
+    private bool band = false;
 
     private async Task Agregar(){
-        tarjetas = new Tarjetas(etiqueta,titulo,descripcion,datosSesionUsuario.getNombreUsuario(),0);
-        await EnviarMensaje();
+        if(etiqueta == "" && titulo == "" && descripcion == "" && urlImagen == ""){
+            band = true;
+            return;
+        }
+        tarjetas = new Tarjetas(etiqueta,titulo,descripcion,datosSesionUsuario.getNombreUsuario(),0,urlImagen);
         await tarjetas.InsetarElementos(new MySqlConnection("Server=localhost;Database=blog_prueba;Uid=root;Pwd=root1234;"));
+        await EnviarMensaje();
     }
 
     public async Task EnviarMensaje(){

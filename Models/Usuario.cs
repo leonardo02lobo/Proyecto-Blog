@@ -27,6 +27,10 @@ namespace Proyecto_Blog.Models
         {
             this.nombreUsuario = nombreUsuario;
         }
+        public void setIniciado(bool iniciado)
+        {
+            this.Iniciado = Iniciado;
+        }
         public string getNombreUsuario()
         {
             return nombreUsuario;
@@ -38,6 +42,17 @@ namespace Proyecto_Blog.Models
         public string getContraseniaEncriptada()
         {
             return EncriptarContrasenia.EncriptarContraseña(contrasenia);
+        }
+
+        public bool getIniciado()
+        {
+            return Iniciado;
+        }
+
+        public void AbrirConection()
+        {
+            conexion = new MySqlConnection(connectionString);
+            conexion.Open();
         }
 
         public bool AgregarUsuario(MySqlCommand command)
@@ -63,13 +78,72 @@ namespace Proyecto_Blog.Models
             {
                 while(reader.Read())
                 {
-                    Iniciado = reader.GetInt32(0) <= 0;
                     nombreUsuario = reader.GetString(1);
+                    if(nombreUsuario != null)
+                    {
+                        Iniciado = true;
+                    }
                 }
-            
-            return (Iniciado,nombreUsuario);
+                return (Iniciado, nombreUsuario);
             }
             
+        }
+
+        public string CambiarContrasenia()
+        {
+            if (!ValidarCorreo())
+            {
+                return "El correo no existe";
+            }
+            string query = "update blog_prueba.usuarios set contrasenia = ?contraseniaNueva where correo = ?correo;";
+            try
+            {
+                conexion.Open();
+                using (MySqlCommand command = new MySqlCommand(query, conexion))
+                {
+                    command.Parameters.Add("?contraseniaNueva", MySqlDbType.VarChar).Value = getContraseniaEncriptada();
+                    command.Parameters.Add("?correo", MySqlDbType.VarChar).Value = getCorreo();
+                    command.ExecuteNonQuery();
+                    return "Cambio exitoso";
+                }    
+            }catch(MySqlException e)
+            {
+                return e.Message;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+        private bool ValidarCorreo()
+        {
+            string query = $"select count(*) from blog_prueba.usuarios where correo = ?correo";
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(query, conexion))
+                {
+                    command.Parameters.Add("?correo", MySqlDbType.VarChar).Value = getCorreo();
+             
+                    using(MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while(reader.Read())
+                        {
+                            if(reader.GetInt32(0) == 1)
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+
+               
+            } catch (MySqlException e) {
+                return false;
+            } finally {
+                conexion.Close();
+            }
+            return false;
         }
     }
 }

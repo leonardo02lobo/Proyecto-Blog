@@ -1,12 +1,5 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "OQ9kWAr7vXk=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\Proyecto_Blog.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
-=======
   "dgSpecHash": "yZoOjaFnTy4=",
   "success": true,
   "projectFilePath": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\Proyecto_Blog.csproj",
@@ -43,6 +36,12 @@
   ],
   "logs": [
     {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
+    {
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
@@ -53,5 +52,4 @@
       ]
     }
   ]
->>>>>>> 3800691a3fddc12b508c955e06f21ae82b848300
 }

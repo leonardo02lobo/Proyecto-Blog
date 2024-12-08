@@ -85,6 +85,88 @@
       ]
     },
     {
+      "Route": "anznznjk.440~",
+      "AssetFile": "anznznjk.440~",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4083"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PEFbBh+Ww+2niH10tOYkT/kXca+lNQgLvm5oqcSx3m4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Dec 2024 23:43:56 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PEFbBh+Ww+2niH10tOYkT/kXca+lNQgLvm5oqcSx3m4="
+        }
+      ]
+    },
+    {
+      "Route": "anznznjk.gls889rg3p.440~",
+      "AssetFile": "anznznjk.440~",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4083"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PEFbBh+Ww+2niH10tOYkT/kXca+lNQgLvm5oqcSx3m4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Dec 2024 23:43:56 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gls889rg3p"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PEFbBh+Ww+2niH10tOYkT/kXca+lNQgLvm5oqcSx3m4="
+        },
+        {
+          "Name": "label",
+          "Value": "anznznjk.440~"
+        }
+      ]
+    },
+    {
       "Route": "app.css",
       "AssetFile": "app.css",
       "Selectors": [],
@@ -111,7 +193,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 23:42:43 GMT"
+          "Value": "Mon, 02 Dec 2024 01:09:19 GMT"
         }
       ],
       "EndpointProperties": [
@@ -148,7 +230,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 23:42:43 GMT"
+          "Value": "Mon, 02 Dec 2024 01:09:19 GMT"
         }
       ],
       "EndpointProperties": [
@@ -439,7 +521,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 23:42:43 GMT"
+          "Value": "Sun, 01 Dec 2024 20:29:17 GMT"
         }
       ],
       "EndpointProperties": [
@@ -484,7 +566,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 23:42:43 GMT"
+          "Value": "Sun, 01 Dec 2024 20:29:17 GMT"
         }
       ],
       "EndpointProperties": [
