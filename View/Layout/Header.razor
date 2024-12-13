@@ -1,4 +1,4 @@
-﻿@using Proyecto_Blog.Components.Pages
+﻿@using Proyecto_Blog.View.Pages
 @using Proyecto_Blog.Models
 @rendermode InteractiveServer
 @inject NavigationManager Navigation
@@ -11,9 +11,7 @@ else if (mensajeRecibido.Equals("crearCuenta"))
     <CrearCuenta  mensaje="RecibirMensaje"/>
 }else if(mensajeRecibido.Equals("Home"))
 {
-    
-    <ContenidoHeader mensajeDatos="RecibirMensaje" Iniciado="band" />
-    @* <Home Iniciado="band" mensaje="RecibirMensaje"/> *@
+    <ContenidoHeader mensajeDatos="RecibirMensaje" Iniciado="band" mensaje="RecibirMensaje"/>
 }else if(mensajeRecibido.Equals("AgregarTarjeta")){
     <AgregarTarjeta mensaje="RecibirMensaje" datosSesionUsuario="usuarioSesion"/>
 }

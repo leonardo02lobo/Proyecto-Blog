@@ -44,7 +44,6 @@ C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\P
 C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\Proyecto_Blog\obj\Debug\net8.0\Proyecto_Blog.csproj.CoreCompileInputs.cache
 C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\Proyecto_Blog\obj\Debug\net8.0\Proyecto_Blog.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\Proyecto_Blog\obj\Debug\net8.0\Proyecto_Blog.sourcelink.json
-C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\Proyecto_Blog\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
 C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\Proyecto_Blog\obj\Debug\net8.0\scopedcss\bundle\Proyecto_Blog.styles.css
 C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\Proyecto_Blog\obj\Debug\net8.0\scopedcss\projectbundle\Proyecto_Blog.bundle.scp.css
 C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\Proyecto_Blog\obj\Debug\net8.0\staticwebassets.build.json
@@ -81,3 +80,5 @@ C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\P
 C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\Proyecto_Blog\obj\Debug\net8.0\Proyecto_Blog.csproj.AssemblyReference.cache
 C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\Proyecto_Blog\obj\Debug\net8.0\Proyecto.E52C5000.Up2Date
 C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\Proyecto_Blog\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\Proyecto_Blog\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\equipo\Documents\Lenguajes de Programacion\C#\PROYECTOS\Proyecto_Blog\Proyecto_Blog\obj\Debug\net8.0\scopedcss\View\Layout\MainLayout.razor.rz.scp.css

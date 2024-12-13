@@ -69,26 +69,6 @@ h1:focus {
     padding: 30px;
 }
 
-#header {
-    width: 100vw;
-    height: 50vw;
-    overflow: hidden;
-    background-image: url('resource/paisaje1.png');
-}
-
-    #header ul {
-        display: flex;
-        padding: 0;
-        width: 400px;
-        animation: slide 10s infinite ease-in-out;
-    }
-
-    #header li {
-        width: 100%;
-        list-style: none;
-        position: relative;
-    }
-
 .contenido {
     position: absolute;
 }
@@ -141,7 +121,7 @@ button {
 }
 
 #inicio {
-    color: white;
+    color: black;
     background-color: rgb(211, 201, 201, 0)
 }
 

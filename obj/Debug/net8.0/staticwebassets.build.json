@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "voLuMRCZj9pfs9Xn4UQKIDJIrsyJXout/uYXYV1Dj9c=",
+  "Hash": "ko6Bw4IUjAWZuf8FsKCHZUY5fmKfVySlcrHVoDU8Tfc=",
   "Source": "Proyecto_Blog",
   "BasePath": "_content/Proyecto_Blog",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "fyhuo5js3c",
-      "Integrity": "ZzKCBp1DMvwcdu+DckDSrD4xIqX/9xQ5zdj7BvkfFxI=",
+      "Fingerprint": "kmb8d01gdv",
+      "Integrity": "JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Proyecto_Blog.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "fyhuo5js3c",
-      "Integrity": "ZzKCBp1DMvwcdu+DckDSrD4xIqX/9xQ5zdj7BvkfFxI=",
+      "Fingerprint": "kmb8d01gdv",
+      "Integrity": "JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Proyecto_Blog.bundle.scp.css"
@@ -94,8 +94,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ugoi2kmfv1",
-      "Integrity": "ooEGQVwHRUqfg3auu39HFdIvbAdZ9YohcBpxoAOD59c=",
+      "Fingerprint": "gd7ayt72al",
+      "Integrity": "LNZoQ07eHiSTRlTOwu7zPZBMCbTy2QeLgG5A8QstaVk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
@@ -272,7 +272,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 01 Dec 2024 23:43:56 GMT"
+          "Value": "Sun, 08 Dec 2024 22:59:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -309,7 +309,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 01 Dec 2024 23:43:56 GMT"
+          "Value": "Sun, 08 Dec 2024 22:59:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -342,7 +342,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4036"
+          "Value": "3654"
         },
         {
           "Name": "Content-Type",
@@ -350,11 +350,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ooEGQVwHRUqfg3auu39HFdIvbAdZ9YohcBpxoAOD59c=\""
+          "Value": "\"LNZoQ07eHiSTRlTOwu7zPZBMCbTy2QeLgG5A8QstaVk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Dec 2024 01:09:19 GMT"
+          "Value": "Fri, 13 Dec 2024 14:23:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -364,12 +364,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ooEGQVwHRUqfg3auu39HFdIvbAdZ9YohcBpxoAOD59c="
+          "Value": "sha256-LNZoQ07eHiSTRlTOwu7zPZBMCbTy2QeLgG5A8QstaVk="
         }
       ]
     },
     {
-      "Route": "app.ugoi2kmfv1.css",
+      "Route": "app.gd7ayt72al.css",
       "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -379,7 +379,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4036"
+          "Value": "3654"
         },
         {
           "Name": "Content-Type",
@@ -387,11 +387,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ooEGQVwHRUqfg3auu39HFdIvbAdZ9YohcBpxoAOD59c=\""
+          "Value": "\"LNZoQ07eHiSTRlTOwu7zPZBMCbTy2QeLgG5A8QstaVk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Dec 2024 01:09:19 GMT"
+          "Value": "Fri, 13 Dec 2024 14:23:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -401,7 +401,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ugoi2kmfv1"
+          "Value": "gd7ayt72al"
         },
         {
           "Name": "label",
@@ -409,7 +409,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ooEGQVwHRUqfg3auu39HFdIvbAdZ9YohcBpxoAOD59c="
+          "Value": "sha256-LNZoQ07eHiSTRlTOwu7zPZBMCbTy2QeLgG5A8QstaVk="
         }
       ]
     },
@@ -670,7 +670,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2248"
+          "Value": "2242"
         },
         {
           "Name": "Content-Type",
@@ -678,11 +678,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZzKCBp1DMvwcdu+DckDSrD4xIqX/9xQ5zdj7BvkfFxI=\""
+          "Value": "\"JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 23:53:42 GMT"
+          "Value": "Thu, 12 Dec 2024 11:44:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -692,12 +692,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ZzKCBp1DMvwcdu+DckDSrD4xIqX/9xQ5zdj7BvkfFxI="
+          "Value": "sha256-JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4="
         }
       ]
     },
     {
-      "Route": "Proyecto_Blog.fyhuo5js3c.bundle.scp.css",
+      "Route": "Proyecto_Blog.kmb8d01gdv.bundle.scp.css",
       "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Proyecto_Blog.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -707,7 +707,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2248"
+          "Value": "2242"
         },
         {
           "Name": "Content-Type",
@@ -715,11 +715,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZzKCBp1DMvwcdu+DckDSrD4xIqX/9xQ5zdj7BvkfFxI=\""
+          "Value": "\"JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 23:53:42 GMT"
+          "Value": "Thu, 12 Dec 2024 11:44:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -729,7 +729,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fyhuo5js3c"
+          "Value": "kmb8d01gdv"
         },
         {
           "Name": "label",
@@ -737,12 +737,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZzKCBp1DMvwcdu+DckDSrD4xIqX/9xQ5zdj7BvkfFxI="
+          "Value": "sha256-JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4="
         }
       ]
     },
     {
-      "Route": "Proyecto_Blog.fyhuo5js3c.styles.css",
+      "Route": "Proyecto_Blog.kmb8d01gdv.styles.css",
       "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Proyecto_Blog.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -752,7 +752,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2248"
+          "Value": "2242"
         },
         {
           "Name": "Content-Type",
@@ -760,11 +760,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZzKCBp1DMvwcdu+DckDSrD4xIqX/9xQ5zdj7BvkfFxI=\""
+          "Value": "\"JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 23:53:42 GMT"
+          "Value": "Thu, 12 Dec 2024 11:44:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -774,7 +774,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fyhuo5js3c"
+          "Value": "kmb8d01gdv"
         },
         {
           "Name": "label",
@@ -782,7 +782,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZzKCBp1DMvwcdu+DckDSrD4xIqX/9xQ5zdj7BvkfFxI="
+          "Value": "sha256-JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4="
         }
       ]
     },
@@ -797,7 +797,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2248"
+          "Value": "2242"
         },
         {
           "Name": "Content-Type",
@@ -805,11 +805,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZzKCBp1DMvwcdu+DckDSrD4xIqX/9xQ5zdj7BvkfFxI=\""
+          "Value": "\"JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 27 Nov 2024 23:53:42 GMT"
+          "Value": "Thu, 12 Dec 2024 11:44:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -819,7 +819,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ZzKCBp1DMvwcdu+DckDSrD4xIqX/9xQ5zdj7BvkfFxI="
+          "Value": "sha256-JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4="
         }
       ]
     },
