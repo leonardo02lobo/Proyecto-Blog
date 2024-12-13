@@ -1,5 +1,7 @@
 ﻿@using MySql.Data.MySqlClient
+@using Proyecto_Blog.Controllers
 @using Proyecto_Blog.Models
+
 <div class="container m-5">
     <form @onsubmit="ValidateData">
         <h3>Crear Cuenta</h3>
@@ -16,7 +18,7 @@
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Ingrese su contraseña</label>
             <input type="password" @bind="contrasenia" class="form-control" id="exampleInputPassword1" placeholder="contraseña">
-            <div id="emailHelp" class="form-text">Debe Ingresar su correo electronico</div>
+            <div id="emailHelp" class="form-text">Debe Ingresar su contraseña</div>
         </div>
         <button type="button" class="btn btn-primary" @onclick="ValidateData">Crear Cuenta</button>
         @if (band)
@@ -32,11 +34,9 @@
 
 @code {
     [Parameter] public EventCallback<string> mensaje { get; set; }
-    private string nombreUsuario = "";
-    private string correo = "";
-    private string contrasenia = "";
+    private string nombreUsuario = "", correo = "", contrasenia = "", Enviarmensaje = "";
     private bool band = false;
-    private string Enviarmensaje = "";
+    private ControladorUsuario? controladorUsuario = null;
 
     private async Task ValidateData()
     {
@@ -44,18 +44,18 @@
             band = true;
             return;
         }
-        Usuario usuario = new Usuario(nombreUsuario, correo, contrasenia);
         try
         {
             if(nombreUsuario == "" && correo == "" && contrasenia == ""){
                 band = true;
                 return;
             }
-            string query = "insert into blog_prueba.usuarios(nombreUsuario,correo,contrasenia) values (?nombreUsuario,?correo,?contrasenia);";
-            usuario.AgregarUsuario(new MySqlCommand(query, usuario.conexion));
+            controladorUsuario = new ControladorUsuario(new Usuario(nombreUsuario, correo, contrasenia));
+            await controladorUsuario.AgregarUsuario();
             await EnviarMensaje();
-        }finally{
-            usuario.conexion.Close();
+        }
+        catch(MySqlException e){
+            band = true;
         }
     }
 

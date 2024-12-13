@@ -1,8 +1,7 @@
 ﻿@page "/"
-@using Proyecto_Blog.Components.Pages
-@using Proyecto_Blog.Models
+@using Proyecto_Blog.View.Pages
 
-<div class="container-fluid m-0 p-0" id="header">
+<div class="container-fluid m-0 p-0">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
@@ -10,9 +9,6 @@
                     <img width="48" height="48" src="https://img.icons8.com/color/48/google-blog-search.png" alt="google-blog-search" />
                     Blog
                 </a>
-                <a class="nav-link active" aria-current="page" href="#">Hotel</a>
-                <a class="nav-link active" aria-current="page" href="#">Viajes</a>
-                <a class="nav-link active" aria-current="page" href="#">Alquileres de Carros</a>
             </div>
 
             <form class="d-flex mx-auto" role="search" style="max-width: 400px;">
@@ -40,32 +36,46 @@
 
 <main>
     <article class="content px-4">
-        <h1>Blog</h1>
-
-        <p>Aquí compartimos consejos de viaje, guías de destinos e historias que inspiran tu próxima aventura.</p>
+        <h1>Holaa</h1>
+    </article>
+    <article class="content px-4">
         @if(Iniciado){
             <button class="btn btn-primary" @onclick="EnviarMensaje">Agregar Nueva Tarjeta</button>
         }
         <div>
             <div class="d-grid gap-2">
                 <section class="justify-content-md-start">
-                    <button type="button" class="btn" data-bs-toggle="button">Todo</button>
-                    <button type="button" class="btn" data-bs-toggle="button">Hoteles</button>
-                    <button type="button" class="btn" data-bs-toggle="button">Viajes</button>
-                    <button type="button" class="btn" data-bs-toggle="button">Alquileres de carro</button>
+                    <button type="button" class="btn" data-bs-toggle="button" @onclick=@(_=>MostrarMensaje("Todo"))>Todo</button>
+                    <button type="button" class="btn" data-bs-toggle="button" @onclick=@(_=>MostrarMensaje("deportes"))>deportes</button>
+                    <button type="button" class="btn" data-bs-toggle="button" @onclick=@(_=>MostrarMensaje("videojuegos"))>videojuegos</button>
+                    <button type="button" class="btn" data-bs-toggle="button" @onclick=@(_=>MostrarMensaje("anime"))>anime</button>
                 </section>
                 <section class="d-md-flex justify-content-md-end">
                 </section>
             </div>
         </div>
     </article>
-    <TarjetasComponentes/>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+
+        </div>
+        <div class="col">
+			<TarjetasComponentes categoria="@categoriaBoton" />
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    
 </main>
 @code {
     [Parameter] public EventCallback<string> mensajeDatos { get; set; }
     [Parameter] public bool Iniciado { get; set; } = false;
     [Parameter] public EventCallback<string> mensaje { get; set; }
+    private string categoriaBoton = "Todo";
 
+    private void MostrarMensaje(string valor){
+        categoriaBoton = valor;
+    }
     public async Task EnviarMensaje()
     {
         await mensaje.InvokeAsync("AgregarTarjeta");

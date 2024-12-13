@@ -18,11 +18,10 @@
 				<button id="miBoton3" type="submit" class="btn btn-primary" @onclick="Cambiar3">Cambiar Contraseña</button>
 			</div>
 		</div>
-		<button type="submit" class="btn btn-primary" @onclick="Ocultar">Ocultar Cambiar Datos</button>
 	</div>
 	@if (band)
 	{
-		<CambiarDatos datoCambiar=@texto usuarioSeleccionado="usuario"/>
+		<CambiarDatos datoCambiar=@texto usuarioSeleccionado="usuario" DatosGuardados="RecibirMensaje"/>
 	}
 </div>
 
@@ -51,7 +50,8 @@
 		band = true;
 		texto = await JS.InvokeAsync<string>("getButtonText", "miBoton3");
 	}
-	private void Ocultar(){
-		band = false;
+
+	private void RecibirMensaje(bool band){
+		this.band = band;
 	}
 }

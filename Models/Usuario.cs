@@ -1,6 +1,4 @@
-﻿
-
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace Proyecto_Blog.Models
 {
@@ -31,23 +29,11 @@ namespace Proyecto_Blog.Models
         {
             this.Iniciado = Iniciado;
         }
-        public string getNombreUsuario()
-        {
-            return nombreUsuario;
-        }
-        public string getCorreo()
-        {
-            return correo;
-        }
-        public string getContraseniaEncriptada()
-        {
-            return EncriptarContrasenia.EncriptarContraseña(contrasenia);
-        }
+        public string getNombreUsuario() => nombreUsuario;
+        public string getCorreo() => correo;
+        public string getContraseniaEncriptada() => EncriptarContrasenia.EncriptarContraseña(contrasenia);
 
-        public bool getIniciado()
-        {
-            return Iniciado;
-        }
+        public bool getIniciado() => Iniciado;
 
         public void AbrirConection()
         {
@@ -64,7 +50,8 @@ namespace Proyecto_Blog.Models
                 command.Parameters.Add("?contrasenia", MySqlDbType.VarChar).Value = getContraseniaEncriptada();
                 command.ExecuteNonQuery();
                 return true;
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 return false;
             }

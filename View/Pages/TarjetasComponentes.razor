@@ -3,19 +3,30 @@
 
 <style>
     #tarjeta:hover {
-        box-shadow: 30px 30px 30px #000;
-        transition: .5s all;
+    box-shadow: 30px 30px 30px #000;
+    transition: .5s all;
+    }
+    #etiqueta{
+    color: white;
+    border: 2px black solid;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 20px;
+    display: inline;
+    padding: 8px;
     }
 </style>
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<p>@MensajeError</p>
+<button type="submit" class="btn btn-primary m-lg-2" @onclick="ActualizarCategoria">Actualizar Categorias</button>
+
+<div class="card">
     @foreach(Tarjetas t in tarjetas){
-        <div class="col">
+        <div class="col m-4">
             <div class="card" style="border: 2px solid black" id="tarjeta">
                 <div class="card text-bg-dark">
                     <img src="@t.getUrlImagen()" class="card-img" alt="foto de una persona relax">
                     <div class="card-img-overlay">
-                        <h5 class="card-title">@t.getEtiquetas()</h5>
+                        <h5 class="card-title" id="etiqueta">@t.getEtiquetas()</h5>
                     </div>
                 </div>
                 <div class="card-body">
@@ -27,26 +38,34 @@
                     </div>
                 </div>
             </div>
-		</div>
-	}
+        </div>
+    }
 </div>
 
 @code{
     [Parameter] public Tarjetas tarjeta { get; set; }
+    [Parameter] public string categoria { get; set; }
     private List<Tarjetas> tarjetas = new List<Tarjetas>();
+    string query,MensajeError;
 
     protected override void OnInitialized()
     {
-        AccederTablaTarjetas();
+        query = "SELECT * FROM blog_prueba.tarjetas;";
+        AccederTablaTarjetas(query);
     }
 
-    private void AccederTablaTarjetas()
+    private void ActualizarCategoria(){
+        tarjetas.Clear();
+        query = $"SELECT * FROM blog_prueba.tarjetas WHERE etiqueta = '{categoria}'";
+        AccederTablaTarjetas(query);
+    }
+
+    private void AccederTablaTarjetas(string query)
     {
         MySqlConnection connection = new MySqlConnection("Server=localhost;Database=blog_prueba;Uid=root;Pwd=root1234;");
         try
         {
             connection.Open();
-            string query = "SELECT * FROM blog_prueba.tarjetas;";
             MySqlCommand command = new MySqlCommand(query, connection);
 
             using (MySqlDataReader reader = command.ExecuteReader())
@@ -56,6 +75,8 @@
                     tarjetas.Add(new Tarjetas(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4),reader.GetString(5)));
                 }
             }
+        }catch(MySqlException e){
+            MensajeError = e.Message;
         }
         finally
         {

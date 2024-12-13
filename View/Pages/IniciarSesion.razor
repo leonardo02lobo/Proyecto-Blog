@@ -1,4 +1,5 @@
 ﻿@using MySql.Data.MySqlClient
+@using Proyecto_Blog.Controllers
 @using Proyecto_Blog.Models
 
 <div class="container m-5">
@@ -28,28 +29,26 @@
 @code {
     [Parameter] public EventCallback<(string,bool,Usuario)> mensaje { get; set; }
     private string correo = "", contrasenia = "";
-    private bool band = false, cambiarContrasenia = true;
+    private bool band = false;
     private string Enviarmensaje = "";
     Usuario usuario;
+    ControladorUsuario? controladorUsuario = null;
 
     private async Task ValidateData()
     {
         usuario = new Usuario("", correo, contrasenia);
         try
         {
-            string query = $"select * from blog_prueba.usuarios where correo = '{usuario.getCorreo()}' and contrasenia  = '{usuario.getContraseniaEncriptada()}';";
-            MySqlCommand command = new MySqlCommand(query, usuario.conexion);
-            (bool band2, string nombreUsuario) = usuario.ValidarUsusario(command);
+            controladorUsuario = new ControladorUsuario(usuario);
+            (bool band2, string nombreUsuario) = controladorUsuario.ValidarUsusario();
             usuario.setNombreUsuario(nombreUsuario);
-            if(!band2){
+            if(band2){
                 band = true;
                 return;
             }
             await EnviarMensaje();
         }catch(MySqlException e){
             band = true;
-        }finally{
-            usuario.conexion.Close();
         }
     }
 

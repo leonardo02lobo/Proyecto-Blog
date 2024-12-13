@@ -18,6 +18,7 @@
 @code {
     [Parameter] public string datoCambiar { get; set; }
     [Parameter] public Usuario usuarioSeleccionado { get; set; }
+    [Parameter] public EventCallback<bool> DatosGuardados { get; set; }
     private string valor1 = "", valor2 = "", mensaje = "";
 
     private async Task EnviarDatosDatabase(){
@@ -46,6 +47,7 @@
             {
                 NombreColumna = "contrasenia";
                 opcion = "correo";
+                valor1 = EncriptarContrasenia.EncriptarContraseña(valor1);
                 valorOriginal = usuarioSeleccionado.getCorreo();
             }
             string query = $"update blog_prueba.usuarios set {NombreColumna} = ?valorColumna where {opcion} = ?valorOriginal;";
@@ -60,5 +62,6 @@
         }catch(MySqlException e){
             mensaje = e.Message;
         }
+        await DatosGuardados.InvokeAsync(false);
     }
 }
