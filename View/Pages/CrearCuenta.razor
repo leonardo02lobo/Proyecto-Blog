@@ -1,77 +1,94 @@
-﻿@using MySql.Data.MySqlClient
+﻿@page "/CrearCuenta"
+
+@using MySql.Data.MySqlClient
 @using Proyecto_Blog.Controllers
 @using Proyecto_Blog.Models
+@inject NavigationManager Navigation
+@rendermode InteractiveServer
 
-<div class="container m-5">
-    <form @onsubmit="ValidateData">
-        <h3>Crear Cuenta</h3>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Ingrese su nombre de Usuario</label>
-            <input type="text" @bind="nombreUsuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="usuario">
-            <div id="emailHelp" class="form-text">Debe Ingresar su nombre de Usuario</div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Ingrese su correo Electronico</label>
-            <input type="email" @bind="correo" class="form-control" id="exampleInputPassword1" placeholder="correo electronico">
-            <div id="emailHelp" class="form-text">Debe Ingresar su correo electronico</div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Ingrese su contraseña</label>
-            <input type="password" @bind="contrasenia" class="form-control" id="exampleInputPassword1" placeholder="contraseña">
-            <div id="emailHelp" class="form-text">Debe Ingresar su contraseña</div>
-        </div>
-        <button type="button" class="btn btn-primary" @onclick="ValidateData">Crear Cuenta</button>
+<PageTitle>Crear Cuenta</PageTitle>
+
+<div class="container mt-5">
+    <div class="custom-container">
+        <form @onsubmit="ValidarDatos">
+            <h3>Crear Cuenta</h3>
+            <div class="p-2 flex-fill">
+                <input type="text" @bind="nombreUsuario" class="form-control" id="nombreUsuario" placeholder="Usuario" required />
+                <div class="form-text">Debe ingresar su nombre de usuario</div>
+            </div>
+            <div class="p-2 flex-fill">
+                <label for="correo" class="form-label">Ingrese su correo electrónico</label>
+                <input type="email" @bind="correo" class="form-control" id="correo" placeholder="Correo electrónico" required />
+                <div class="form-text">Debe ingresar su correo electrónico</div>
+            </div>
+            <div class="p-2 flex-fill">
+                <label for="contrasenia" class="form-label">Ingrese su contraseña</label>
+                <input type="password" @bind="contrasenia" class="form-control" id="contrasenia" placeholder="Contraseña" required />
+                <div class="form-text">Debe ingresar su contraseña</div>
+            </div>
+            <button type="submit" class="btn btn-primary" @onclick="ValidarDatos">Crear Cuenta</button>
+        </form>
+
         @if (band)
         {
-            <div class="alert alert-danger" role="alert">
-                Datos Incompletos
-                <script>alert('Datos Faltantes. Intente mas tarde')</script>
-                @EnviarMensaje()
+            <div class="alert alert-danger mt-3" role="alert">
+                Datos incompletos: @Mensaje
+                <script>alert('Datos faltantes. Intente más tarde.')</script>
             </div>
         }
-    </form>
+    </div>
 </div>
 
 @code {
-    [Parameter] public EventCallback<string> mensaje { get; set; }
-    private string nombreUsuario = "", correo = "", contrasenia = "", Enviarmensaje = "";
+    private string nombreUsuario = "", correo = "", contrasenia = "", Mensaje = "";
     private bool band = false;
     private ControladorUsuario? controladorUsuario = null;
 
-    private async Task ValidateData()
+    private async Task ValidarDatos()
     {
-        if(!validarCorreo()){
-            band = true;
-            return;
+        band = false;
+        if (await ValidateData())
+        {
+            Navigation.NavigateTo("/IniciarSesion");
         }
+    }
+
+    private async Task<bool> ValidateData()
+    {
+        if (!validarCorreo())
+        {
+            Mensaje = "El correo debe ser de Gmail.";
+            band = true;
+            return false;
+        }
+
+        if (string.IsNullOrWhiteSpace(nombreUsuario) || string.IsNullOrWhiteSpace(correo) ||
+        string.IsNullOrWhiteSpace(contrasenia))
+        {
+            Mensaje = "Todos los campos son obligatorios.";
+            band = true;
+            return false;
+        }
+
         try
         {
-            if(nombreUsuario == "" && correo == "" && contrasenia == ""){
-                band = true;
-                return;
+            controladorUsuario = new ControladorUsuario(new Usuario(0, nombreUsuario, correo, contrasenia));
+            if (controladorUsuario != null)
+            {
+                await controladorUsuario.AgregarUsuario();
             }
-            controladorUsuario = new ControladorUsuario(new Usuario(nombreUsuario, correo, contrasenia));
-            await controladorUsuario.AgregarUsuario();
-            await EnviarMensaje();
+            return true;
         }
-        catch(MySqlException e){
+        catch (MySqlException e)
+        {
+            Mensaje = e.Message;
             band = true;
         }
-    }
-
-    public async Task EnviarMensaje()
-    {
-        Enviarmensaje = "Home";
-        await mensaje.InvokeAsync(Enviarmensaje);
-    }
-
-    private bool validarCorreo(){
-        string[] LetrasEmail = correo.Split("@");
-        for(int i = 0; i < LetrasEmail.Length;i++){
-            if(LetrasEmail[i].Equals("gmail.com")){
-                return true;
-            }
-        }
         return false;
+    }
+
+    private bool validarCorreo()
+    {
+        return correo.EndsWith("@gmail.com");
     }
 }

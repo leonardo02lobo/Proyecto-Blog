@@ -10,7 +10,7 @@ namespace Proyecto_Blog.Controllers
         {
             string contenido = File.ReadAllText("appsettings.json");
             JObject json = JObject.Parse(contenido);
-            return (string)json["ConnectionStrings"]["connectionBD"];
+            return (string?)json["ConnectionStrings"]?["connectionBD"] ?? string.Empty;
         }
     }
 }

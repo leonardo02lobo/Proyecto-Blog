@@ -1,65 +1,79 @@
-﻿@using MySql.Data.MySqlClient
+﻿@page "/IniciarSesion"
+
+@using MySql.Data.MySqlClient
 @using Proyecto_Blog.Controllers
 @using Proyecto_Blog.Models
+@rendermode InteractiveServer
+@inject NavigationManager navigation
 
-<div class="container m-5">
-    <form @onsubmit="ValidateData">
-        <h3>Iniciar Sesion</h3>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Ingresar Correo Electronico</label>
-            <input type="email" @bind="correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo Electronico">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Ingresar La Contraseña</label>
-            <input type="password" @bind="contrasenia" class="form-control" id="exampleInputPassword1" placeholder="contraseña">
-        </div>
-        <div class="mb-3">
-            <a href="" @onclick="Recuperar">Olvidaste tu contraseña</a>
-        </div>
-        <button type="button" class="btn btn-primary" @onclick="ValidateData">Iniciar Sesion</button>
-        @if (band)
-        {
-            <div class="alert alert-danger" role="alert">
-                Usuario o Contraseña incorrecta. Intenta nuevamente!
+<PageTitle>Iniciar Sesion</PageTitle>
+
+<div class="container mt-5">
+    <div class="custom-container">
+        <form @onsubmit="ValidateData">
+            <h3>Iniciar Sesion</h3>
+            <div class="p-2 flex-fill">
+                <label for="exampleInputEmail1" class="form-label">Ingresar Correo Electronico</label>
+                <input type="email" @bind="correo" class="form-control" id="exampleInputPassword1"  placeholder="Correo Electronico">
             </div>
-        }
-    </form>
+            <div class="p-2 flex-fill">
+                <label for="exampleInputPassword1" class="form-label">Ingresar La Contraseña</label>
+                <input type="password" @bind="contrasenia" class="form-control" id="exampleInputPassword1" placeholder="contraseña">
+            </div>
+            <div class="mb-3">
+                <a href="" >Olvidaste tu contraseña</a>
+            </div>
+            <button type="button" class="btn btn-primary" @onclick="ValidateData">Iniciar Sesion</button>
+            @if (band)
+            {
+                <div class="alert alert-danger" role="alert">
+                    Usuario o Contraseña incorrecta. Intenta nuevamente!
+                    @Mensaje
+                </div>
+            }
+        </form>
+    </div>
 </div>
 
 @code {
-    [Parameter] public EventCallback<(string,bool,Usuario)> mensaje { get; set; }
-    private string correo = "", contrasenia = "";
+    private string correo = "", contrasenia = "", Mensaje = "";
     private bool band = false;
-    private string Enviarmensaje = "";
-    Usuario usuario;
-    ControladorUsuario? controladorUsuario = null;
+    private Usuario? usuario = null;
+    private ControladorUsuario? controladorUsuario = null;
 
-    private async Task ValidateData()
+    private void ValidateData()
     {
-        usuario = new Usuario("", correo, contrasenia);
-        try
+        if(ValidarUsuario())
         {
-            controladorUsuario = new ControladorUsuario(usuario);
-            (bool band2, string nombreUsuario) = controladorUsuario.ValidarUsusario();
-            usuario.setNombreUsuario(nombreUsuario);
-            if(band2){
-                band = true;
-                return;
+            if (usuario != null)
+            {
+                navigation.NavigateTo($"/?id={usuario.getId()}");
             }
-            await EnviarMensaje();
-        }catch(MySqlException e){
-            band = true;
         }
     }
 
-    private async Task Recuperar(){
-        Enviarmensaje = "Recuperar";
-        await mensaje.InvokeAsync((Enviarmensaje,false, null));
-    }
-
-    public async Task EnviarMensaje()
+    private bool ValidarUsuario()
     {
-        Enviarmensaje = "Home";
-        await mensaje.InvokeAsync((Enviarmensaje,true,usuario));
+        usuario = new Usuario(0,"", correo, contrasenia);
+        try
+        {
+            controladorUsuario = new ControladorUsuario(usuario);
+            (bool band2, string nombreUsuario,int id) = controladorUsuario.ValidarUsusario();
+            usuario.setNombreUsuario(nombreUsuario);
+            usuario.setId(id);
+            if (!band2)
+            {
+                band = true;
+                return false;
+            }
+            usuario.setIniciado(band2);
+            return true;
+        }
+        catch (MySqlException e)
+        {
+            Mensaje = e.Message;
+            band = true;
+        }
+        return false;
     }
 }

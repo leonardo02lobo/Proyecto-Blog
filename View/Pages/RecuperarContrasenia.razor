@@ -1,4 +1,5 @@
-﻿@using Proyecto_Blog.Models
+﻿@using Proyecto_Blog.Controllers
+@using Proyecto_Blog.Models
 @rendermode InteractiveServer
 
 <form @onsubmit="ComprobarContrasenia">
@@ -35,8 +36,9 @@
             band = true;
             return;
         }
-        Usuario usuario = new Usuario("",correo,contraseniaNueva);
-        mensajeError = usuario.CambiarContrasenia();
+
+        ControladorUsuario controladorUsuario = new ControladorUsuario(new Usuario(0,"", correo, contraseniaNueva));
+        mensajeError = await controladorUsuario.CambiarContrasenia();
         await EnviarMensaje();
     }
 

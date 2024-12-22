@@ -50,82 +50,29 @@ h1:focus {
     border-color: #929292;
 }
 
-#links-item {
+#link-principal{
     text-decoration: none;
-    color: white;
-    font-size: 18px;
-    padding: 10px;
-    transition: .5s all;
+    font-size: 30px;
+  
+}  
+.blog{
+    margin: auto;
+    color: black;
+}
+#navegacion{
+    position: fixed;
+    z-index: 100;
+    padding: 10px 50px 10px 50px;
 }
 
-    #links-item:hover {
-        color: black;
-    }
-
-#links-titulo {
-    text-decoration: none;
-    color: white;
-    font-size: 25px;
-    padding: 30px;
+#principal{
+    padding-top: 80px;
 }
 
-.contenido {
-    position: absolute;
-}
-
-#header img {
-    width: 100%;
-}
-
-@keyframes header {
-
-    0% {
-        margin-left: 0
-    }
-
-    20% {
-        margin-left: 0
-    }
-
-    25% {
-        margin-left: -100%
-    }
-
-    45% {
-        margin-left: -100%
-    }
-
-    50% {
-        margin-left: -200%
-    }
-
-    70% {
-        margin-left: -200%
-    }
-
-    75% {
-        margin-left: -300%
-    }
-
-    100% {
-        margin-left: -300%
-    }
-}
-
-button {
+.custom-container{
+    max-width: 400px;
+    border: 2px solid black;
+    padding:20px;
     border-radius: 5px;
-    padding: 10px;
-    margin-left: 7px;
-    background-color: white;
-    color: black;
-}
-
-#inicio {
-    color: black;
-    background-color: rgb(211, 201, 201, 0)
-}
-
-.imagenInicio{
-    border-radius: 50%;
-    width: 40px;
+    margin: auto;
 }
