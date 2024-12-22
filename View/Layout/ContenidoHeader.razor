@@ -1,107 +1,71 @@
 ﻿@page "/"
+
+@using Proyecto_Blog.Controllers
+@using Proyecto_Blog.Models
 @using Proyecto_Blog.View.Pages
+@inject NavigationManager navigation
 
-<div class="container-fluid m-0 p-0">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-                <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img width="48" height="48" src="https://img.icons8.com/color/48/google-blog-search.png" alt="google-blog-search" />
-                    Blog
-                </a>
-            </div>
+<BarraNavegacion />
 
-            <form class="d-flex mx-auto" role="search" style="max-width: 400px;">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-            <div class="d-flex gap-2">
-                @if (!Iniciado)
-                {
-                    <NavLink id="inicio" class="btn btn-primary" @onclick="EnviarMensajeiniciarSesion"><strong>Iniciar Sesión</strong></NavLink>
-                    <button class="btn btn-secondary" @onclick="EnviarMensajeiniciarSesion2"><strong>Crear Cuenta</strong></button>
-                }else{
-                    <select class="form-select" aria-label="Default select example" @onchange="EnviarMensajePerfil">
-                        <option selected>Informacion</option>
-                        <option value="1">Perfil</option>
-                        <option value="2">Cerrar Sesion</option>
-                    </select>
-                    <img style="border-radius: 50%; width: 40px;" src="/resource/avatar.png" alt="Avatar"/>
-                }
-            </div>
-
-        </div>
-    </nav>
-</div>
-
-<main>
-    <article class="content px-4">
-        <h1>Holaa</h1>
-    </article>
-    <article class="content px-4">
-        @if(Iniciado){
-            <button class="btn btn-primary" @onclick="EnviarMensaje">Agregar Nueva Tarjeta</button>
-        }
-        <div>
-            <div class="d-grid gap-2">
-                <section class="justify-content-md-start">
-                    <button type="button" class="btn" data-bs-toggle="button" @onclick=@(_=>MostrarMensaje("Todo"))>Todo</button>
-                    <button type="button" class="btn" data-bs-toggle="button" @onclick=@(_=>MostrarMensaje("deportes"))>deportes</button>
-                    <button type="button" class="btn" data-bs-toggle="button" @onclick=@(_=>MostrarMensaje("videojuegos"))>videojuegos</button>
-                    <button type="button" class="btn" data-bs-toggle="button" @onclick=@(_=>MostrarMensaje("anime"))>anime</button>
-                </section>
-                <section class="d-md-flex justify-content-md-end">
-                </section>
-            </div>
-        </div>
-    </article>
+<main id="principal">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-
+            <!--Personal, y se activa cuando se inicia sesion-->
         </div>
         <div class="col">
-			<TarjetasComponentes categoria="@categoriaBoton" />
+            @if (idUsuario != 0)
+            {
+                @if (usuario != null)
+                {
+                    @if (usuario.getIniciado())
+                    {
+                        <NavLink class="btn btn-primary" href="/AgregarTarjeta">Agregar Nueva Tarjeta</NavLink>
+                    }
+                }
+            }
+            <section class="justify-content-md-start">
+                <button type="button" class="btn" data-bs-toggle="button"
+                    @onclick=@(_=>MostrarMensaje("Todo"))>Todo</button>
+                <button type="button" class="btn" data-bs-toggle="button"
+                    @onclick=@(_=>MostrarMensaje("deportes"))>deportes</button>
+                <button type="button" class="btn" data-bs-toggle="button"
+                    @onclick=@(_=>MostrarMensaje("videojuegos"))>videojuegos</button>
+                <button type="button" class="btn" data-bs-toggle="button"
+                    @onclick=@(_=>MostrarMensaje("anime"))>anime</button>
+            </section>
+            <TarjetasComponentes />
         </div>
         <div class="col">
+            <!--Vista de las tarjetas-->
         </div>
     </div>
-    
+
 </main>
+
 @code {
-    [Parameter] public EventCallback<string> mensajeDatos { get; set; }
-    [Parameter] public bool Iniciado { get; set; } = false;
-    [Parameter] public EventCallback<string> mensaje { get; set; }
-    private string categoriaBoton = "Todo";
+    [Parameter]
+    public int idUsuario { get; set; }
+    private Usuario? usuario { get; set; }
+    private string categoria = "";
 
-    private void MostrarMensaje(string valor){
-        categoriaBoton = valor;
-    }
-    public async Task EnviarMensaje()
+    protected override async Task OnInitializedAsync()
     {
-        await mensaje.InvokeAsync("AgregarTarjeta");
-    }
+        var uri = navigation.ToAbsoluteUri(navigation.Uri); // Obtener la URL completa
+        var queryParams = Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(uri.Query);
 
-    private async Task EnviarMensajeiniciarSesion()
-    {
-        await mensajeDatos.InvokeAsync("iniciarSesion");
-    }
-
-    private async Task EnviarMensajeiniciarSesion2()
-    {
-        await mensajeDatos.InvokeAsync("crearCuenta");
-    } 
-
-    private async Task EnviarMensajePerfil(ChangeEventArgs e)
-    {
-        var selectedValue = e.Value?.ToString();
-
-        if (selectedValue == "1")
+        if (queryParams.TryGetValue("id", out var id))
         {
-            await mensajeDatos.InvokeAsync("Perfil");
+            idUsuario = Int32.Parse(id);
+            usuario = await new ControladorUsuario(new Usuario()).ObtenerDatos(idUsuario);
         }
-        else if (selectedValue == "2")
+    }
+    private void MostrarMensaje(string valor)
+    {
+        if (valor == "Todo")
         {
-            Iniciado = false;
+            valor = "";
+            return;
         }
+        categoria = valor;
     }
 }

@@ -1,4 +1,5 @@
 ﻿@using MySql.Data.MySqlClient
+@using Proyecto_Blog.Controllers
 @using Proyecto_Blog.Models
 
 <h3>@datoCambiar</h3>
@@ -28,40 +29,31 @@
             return;
         }
 
-        string NombreColumna = "", opcion = "", valorOriginal = "";
         try
-        {   
-            if (datoCambiar.Equals("Cambiar Nombre Usuario"))
-            {
-                NombreColumna = "NombreUsuario";
-                opcion = "correo";
-                valorOriginal = usuarioSeleccionado.getCorreo();
-            }
-            else if (datoCambiar.Equals("Cambiar Correo Electronico"))
-            {
-                NombreColumna = "correo";
-                opcion = "NombreUsuario";
-                valorOriginal = usuarioSeleccionado.getNombreUsuario();
-            }
-            else if (datoCambiar.Equals("Cambiar Contraseña"))
-            {
-                NombreColumna = "contrasenia";
-                opcion = "correo";
-                valor1 = EncriptarContrasenia.EncriptarContraseña(valor1);
-                valorOriginal = usuarioSeleccionado.getCorreo();
-            }
-            string query = $"update blog_prueba.usuarios set {NombreColumna} = ?valorColumna where {opcion} = ?valorOriginal;";
-            MySqlCommand command = new MySqlCommand(query, usuarioSeleccionado.conexion);
-
-            command.Parameters.Add("?ValorColumna", MySqlDbType.VarChar).Value = valor1;
-            command.Parameters.Add("?valorOriginal", MySqlDbType.VarChar).Value = valorOriginal;
-
-            await command.ExecuteNonQueryAsync();
+        {
+            (string NombreColumna, string opcion, string valorOriginal) = DeterminarValores(datoCambiar);
+            await new ControladorTarjetas(null).ActualizarCampos(NombreColumna,opcion,valor1,valorOriginal);
         }catch(InvalidOperationException e){
             mensaje = e.Message;
         }catch(MySqlException e){
             mensaje = e.Message;
         }
         await DatosGuardados.InvokeAsync(false);
+    }
+    private (string,string,string) DeterminarValores(string dato){
+        if (dato.Equals("Cambiar Nombre Usuario"))
+        {
+            return ("NombreUsuario", "correo", usuarioSeleccionado.getCorreo());
+        }
+        else if (dato.Equals("Cambiar Correo Electronico"))
+        {
+            return ("correo", "NombreUsuario", usuarioSeleccionado.getNombreUsuario());
+        }
+        else if (dato.Equals("Cambiar Contraseña"))
+        {
+            valor1 = EncriptarContrasenia.EncriptarContraseña(valor1);
+            return ("contrasenia", "correo", usuarioSeleccionado.getCorreo());
+        }
+        return ("", "", "");
     }
 }

@@ -1,9 +1,0 @@
-wwwroot\anznznjk.440~
-wwwroot\app.css
-wwwroot\bootstrap\bootstrap.min.css
-wwwroot\bootstrap\bootstrap.min.css.map
-wwwroot\favicon.png
-wwwroot\resource\avatar.png
-wwwroot\resource\lupa.png
-wwwroot\resource\paisaje1.png
-wwwroot\resource\photo_2024-11-21_06-10-18.jpg

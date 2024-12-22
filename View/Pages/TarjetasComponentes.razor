@@ -1,4 +1,5 @@
 ﻿@using MySql.Data.MySqlClient
+@using Proyecto_Blog.Controllers
 @using Proyecto_Blog.Models
 
 <style>
@@ -43,44 +44,41 @@
 </div>
 
 @code{
-    [Parameter] public Tarjetas tarjeta { get; set; }
-    [Parameter] public string categoria { get; set; }
+    private string? categoria { get; set; }
     private List<Tarjetas> tarjetas = new List<Tarjetas>();
-    string query,MensajeError;
+    ControladorTarjetas? controladorTarjetas = null;
+    string? query,MensajeError;
 
     protected override void OnInitialized()
     {
-        query = "SELECT * FROM blog_prueba.tarjetas;";
-        AccederTablaTarjetas(query);
+        controladorTarjetas = new ControladorTarjetas(null);
+        rellenarList(controladorTarjetas.AccederTablaTarjetas(""));
     }
 
     private void ActualizarCategoria(){
         tarjetas.Clear();
-        query = $"SELECT * FROM blog_prueba.tarjetas WHERE etiqueta = '{categoria}'";
-        AccederTablaTarjetas(query);
+        rellenarList(controladorTarjetas?.AccederTablaTarjetas(categoria ?? ""));
     }
 
-    private void AccederTablaTarjetas(string query)
-    {
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=blog_prueba;Uid=root;Pwd=root1234;");
-        try
+    private void rellenarList(MySqlDataReader? reader){
+        if (reader == null)
         {
-            connection.Open();
-            MySqlCommand command = new MySqlCommand(query, connection);
+            MensajeError = "Reader is null.";
+            return;
+        }
 
-            using (MySqlDataReader reader = command.ExecuteReader())
-            {
+        using(reader){
+            try{
                 while (reader.Read())
                 {
-                    tarjetas.Add(new Tarjetas(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4),reader.GetString(5)));
+                    tarjetas.Add(new Tarjetas(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4), reader.GetString(5)));
                 }
+            }catch(MySqlException e){
+                MensajeError = e.Message;
+            }catch(NullReferenceException e){
+                MensajeError = e.Message;
             }
-        }catch(MySqlException e){
-            MensajeError = e.Message;
         }
-        finally
-        {
-            connection.Close();
-        }
+        controladorTarjetas?.CerrarConexion();
     }
 }

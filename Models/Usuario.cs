@@ -12,10 +12,15 @@ namespace Proyecto_Blog.Models
         private string connectionString = "Server=localhost;Database=blog_prueba;Uid=root;Pwd=root1234;";
         private bool Iniciado { get; set; } = false;
 
-        public Usuario(string nombreUsuario, string correo, string contrasenia)
+        public Usuario()
+        {
+            conexion = new MySqlConnection(connectionString);
+        }
+        public Usuario(int id,string nombreUsuario, string correo, string contrasenia)
         {
             conexion = new MySqlConnection(connectionString);
             conexion.Open();
+            this.id = id;
             this.nombreUsuario = nombreUsuario;
             this.correo = correo;
             this.contrasenia = contrasenia;
@@ -27,8 +32,23 @@ namespace Proyecto_Blog.Models
         }
         public void setIniciado(bool iniciado)
         {
-            this.Iniciado = Iniciado;
+            this.Iniciado = iniciado;
         }
+
+        public void setId(int id)
+        {
+            this.id = id;
+        }
+
+        public void setCorreo(string correo)
+        {
+            this.correo = correo;
+        }
+        public void setContrasenia(string contrasenia)
+        {
+            this.contrasenia = contrasenia;
+        }
+        public int getId() => id;
         public string getNombreUsuario() => nombreUsuario;
         public string getCorreo() => correo;
         public string getContraseniaEncriptada() => EncriptarContrasenia.EncriptarContraseña(contrasenia);
@@ -51,13 +71,13 @@ namespace Proyecto_Blog.Models
                 command.ExecuteNonQuery();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
         }
 
-        public (bool,string) ValidarUsusario(MySqlCommand command)
+        public (bool,string?) ValidarUsusario(MySqlCommand command)
         {
             string nombreUsuario = "";
 
@@ -125,7 +145,7 @@ namespace Proyecto_Blog.Models
                 }
 
                
-            } catch (MySqlException e) {
+            } catch (MySqlException) {
                 return false;
             } finally {
                 conexion.Close();
