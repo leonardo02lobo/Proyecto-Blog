@@ -23,16 +23,6 @@
                     }
                 }
             }
-            <section class="justify-content-md-start">
-                <button type="button" class="btn" data-bs-toggle="button"
-                    @onclick=@(_=>MostrarMensaje("Todo"))>Todo</button>
-                <button type="button" class="btn" data-bs-toggle="button"
-                    @onclick=@(_=>MostrarMensaje("deportes"))>deportes</button>
-                <button type="button" class="btn" data-bs-toggle="button"
-                    @onclick=@(_=>MostrarMensaje("videojuegos"))>videojuegos</button>
-                <button type="button" class="btn" data-bs-toggle="button"
-                    @onclick=@(_=>MostrarMensaje("anime"))>anime</button>
-            </section>
             <TarjetasComponentes />
         </div>
         <div class="col">
@@ -58,14 +48,5 @@
             idUsuario = Int32.Parse(id);
             usuario = await new ControladorUsuario(new Usuario()).ObtenerDatos(idUsuario);
         }
-    }
-    private void MostrarMensaje(string valor)
-    {
-        if (valor == "Todo")
-        {
-            valor = "";
-            return;
-        }
-        categoria = valor;
     }
 }

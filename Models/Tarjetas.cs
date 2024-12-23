@@ -14,7 +14,7 @@ namespace Proyecto_Blog.Models
         public MySqlConnection conexion;
         private string connectionString = "Server=localhost;Database=blog_prueba;Uid=root;Pwd=root1234;";
 
-        public Tarjetas(string etiqueta,string titulo,string descripcion,string perfil, int idPerifil,string urlImagen)
+        public Tarjetas(string etiqueta,string titulo,string descripcion,string perfil, int idPerfil,string urlImagen)
         {
             conexion = new MySqlConnection(connectionString);
             conexion.Open();
