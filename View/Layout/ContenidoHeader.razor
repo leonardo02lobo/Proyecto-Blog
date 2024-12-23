@@ -4,6 +4,7 @@
 @using Proyecto_Blog.Models
 @using Proyecto_Blog.View.Pages
 @inject NavigationManager navigation
+@rendermode InteractiveServer
 
 <BarraNavegacion />
 
@@ -23,10 +24,15 @@
                     }
                 }
             }
-            <TarjetasComponentes />
+            <TarjetasComponentes IsVisible=DarValor/>
         </div>
         <div class="col">
-            <!--Vista de las tarjetas-->
+            <div style="position: fixed;">
+               <!--Vista de las tarjetas-->
+                @if(tarjeta != null){
+                    <VistaTarjeta tarjetas=tarjeta/>
+                } 
+            </div>  
         </div>
     </div>
 
@@ -35,8 +41,11 @@
 @code {
     [Parameter]
     public int idUsuario { get; set; }
+
+    private bool mostrar = false;
     private Usuario? usuario { get; set; }
     private string categoria = "";
+    private Tarjetas? tarjeta = null;
 
     protected override async Task OnInitializedAsync()
     {
@@ -47,6 +56,15 @@
         {
             idUsuario = Int32.Parse(id);
             usuario = await new ControladorUsuario(new Usuario()).ObtenerDatos(idUsuario);
+        }
+    }
+
+    private void DarValor((bool,Tarjetas) valor)
+    {
+        mostrar = valor.Item1;
+        if(valor.Item2 != null)
+        {
+            tarjeta = valor.Item2;
         }
     }
 }

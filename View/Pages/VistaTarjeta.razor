@@ -1,0 +1,27 @@
+@using Proyecto_Blog.Models
+@rendermode InteractiveServer
+
+<div class="col m-4">
+    <div class="card" style="border: 2px solid black" id="tarjeta">
+        <div class="col d-flex">
+            <img style="border-radius: 50%; width: 40px;" src="/resource/avatar.png" alt="Avatar" />
+            <p class="card-text">@tarjetas?.getPerfil()</p>
+        </div>
+        <div class="card text-bg-dark">
+            <img src="@tarjetas?.getUrlImagen()" class="card-img" alt="foto de una persona relax">
+            <div class="card-img-overlay">
+                <h5 class="card-title" id="etiqueta">@tarjetas?.getEtiquetas()</h5>
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@tarjetas?.getTitulo()</h5>
+            <p class="card-text">@tarjetas?.getDescripcion()</p>
+
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public Tarjetas? tarjetas { get; set; }
+}
