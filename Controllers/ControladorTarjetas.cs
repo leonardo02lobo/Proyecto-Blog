@@ -41,7 +41,7 @@ namespace Proyecto_Blog.Controllers
 
                 await command.ExecuteNonQueryAsync();
             }
-            catch (MySqlException e)
+            catch (MySqlException)
             {
                 return;
             }
@@ -66,31 +66,23 @@ namespace Proyecto_Blog.Controllers
                     }
                 }
             }
-            catch (MySqlException e)
+            catch (MySqlException)
             {
                 return 0;
             }
             return 0;
         }
-        public MySqlDataReader AccederTablaTarjetas(string categoria)
+        public MySqlDataReader? AccederTablaTarjetas()
         {
             string query = "SELECT * FROM blog_prueba.tarjetas;";
-            if (categoria != "")
-            {
-                query = $"SELECT * FROM blog_prueba.tarjetas WHERE etiqueta = ?categoria;";
-            }
             try
             {
                 conexion?.Open();
                 MySqlCommand command = new MySqlCommand(query, conexion);
-                if (categoria != "")
-                {
-                    command.Parameters.Add("?categoria", MySqlDbType.VarChar).Value = categoria;
-                }
 
                 return command.ExecuteReader();
             }
-            catch (MySqlException e)
+            catch (MySqlException)
             {
                 return null;
             }
@@ -105,6 +97,13 @@ namespace Proyecto_Blog.Controllers
             command.Parameters.Add("?valorOriginal", MySqlDbType.VarChar).Value = valorOriginal;
 
             await command.ExecuteNonQueryAsync();
+        }
+    }
+
+    internal class MuySqlDataReader
+    {
+        public MuySqlDataReader()
+        {
         }
     }
 }
