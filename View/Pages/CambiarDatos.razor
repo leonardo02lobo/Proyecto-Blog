@@ -17,13 +17,13 @@
 </div>
 
 @code {
-    [Parameter] public string datoCambiar { get; set; }
-    [Parameter] public Usuario usuarioSeleccionado { get; set; }
+    [Parameter] public string? datoCambiar { get; set; }
+    [Parameter] public Usuario? usuarioSeleccionado { get; set; }
     [Parameter] public EventCallback<bool> DatosGuardados { get; set; }
     private string valor1 = "", valor2 = "", mensaje = "";
 
     private async Task EnviarDatosDatabase(){
-        usuarioSeleccionado.AbrirConection();
+        usuarioSeleccionado?.AbrirConection();
         if(valor1 != valor2){
             mensaje = "Verificar si son iguales. Los datos que ingresaste no coinciden";
             return;
@@ -32,7 +32,7 @@
         try
         {
             (string NombreColumna, string opcion, string valorOriginal) = DeterminarValores(datoCambiar);
-            await new ControladorTarjetas(null).ActualizarCampos(NombreColumna,opcion,valor1,valorOriginal);
+            await new ControladorTarjetas(new Tarjetas("","","","",0,"")).ActualizarCampos(NombreColumna,opcion,valor1,valorOriginal);
         }catch(InvalidOperationException e){
             mensaje = e.Message;
         }catch(MySqlException e){

@@ -6,12 +6,18 @@
 @inject NavigationManager navigation
 @rendermode InteractiveServer
 
-<BarraNavegacion />
+<BarraNavegacion Activo=mostrar/>
 
 <main id="principal">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
             <!--Personal, y se activa cuando se inicia sesion-->
+            <div style="position: fixed;">
+                @if (usuario != null)
+                {
+                    <VistaUsuario usuario=usuario />
+                }
+            </div>
         </div>
         <div class="col">
             @if (idUsuario != 0)
@@ -24,15 +30,16 @@
                     }
                 }
             }
-            <TarjetasComponentes IsVisible=DarValor/>
+            <TarjetasComponentes IsVisible=DarValor />
         </div>
         <div class="col">
             <div style="position: fixed;">
-               <!--Vista de las tarjetas-->
-                @if(tarjeta != null){
-                    <VistaTarjeta tarjetas=tarjeta/>
-                } 
-            </div>  
+                <!--Vista de las tarjetas-->
+                @if (tarjeta != null)
+                {
+                    <VistaTarjeta tarjetas=tarjeta />
+                }
+            </div>
         </div>
     </div>
 
@@ -54,15 +61,16 @@
 
         if (queryParams.TryGetValue("id", out var id))
         {
-            idUsuario = Int32.Parse(id);
+            idUsuario = Int32.Parse(id!);
             usuario = await new ControladorUsuario(new Usuario()).ObtenerDatos(idUsuario);
+            mostrar = true;
         }
     }
 
-    private void DarValor((bool,Tarjetas) valor)
+    private void DarValor((bool, Tarjetas) valor)
     {
         mostrar = valor.Item1;
-        if(valor.Item2 != null)
+        if (valor.Item2 != null)
         {
             tarjeta = valor.Item2;
         }

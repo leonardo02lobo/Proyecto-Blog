@@ -1,6 +1,7 @@
 ﻿@using Proyecto_Blog.Controllers
 @using Proyecto_Blog.Models
 @inject NavigationManager navigation
+@rendermode InteractiveServer
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navegacion">
     <div class="d-flex align-items-center" href="/">
@@ -14,14 +15,14 @@
         <input class="form-control me-2" type="search" placeholder="buscar">
     </div>
     <div class="d-flex gap-2">
-        @if (!mostrar)
+        @if (!Activo)
         {
             <NavLink class="btn btn-primary" href="/IniciarSesion">Iniciar Sesión</NavLink>
             <NavLink class="btn btn-secondary" href="/CrearCuenta">Crear Cuenta</NavLink>
         }
         else
         {
-            <select class="form-select" aria-label="Default select example" @* @onchange="EnviarMensajePerfil"*@>
+            <select class="form-select" aria-label="Default select example">
                 <option selected>Informacion</option>
                 <option value="1">Perfil</option>
                 <option value="2">Cerrar Sesion</option>
@@ -32,6 +33,5 @@
 </nav>
 
 @code {
-    private Usuario? usuario { get; set; } = null;
-    private bool mostrar = false;
+    [Parameter] public bool Activo { get; set; } = false;
 }
