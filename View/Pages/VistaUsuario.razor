@@ -1,0 +1,17 @@
+@using Proyecto_Blog.Models
+
+<div class="container">
+    <div class="col">
+        <div class="col">
+            <img style="border-radius: 50%; width: 200px;" src="/resource/avatar.png" alt="Avatar" />
+        </div>
+        <div class="col">
+            <p style="margin:30px; font-size:20px;">Nombre: @usuario?.getNombreUsuario()</p>
+            <p style="margin:30px; font-size:20px;">Correo: @usuario?.getCorreo()</p>
+        </div>
+    </div>
+</div>
+
+@code{
+    [Parameter] public Usuario? usuario {get;set;}
+}

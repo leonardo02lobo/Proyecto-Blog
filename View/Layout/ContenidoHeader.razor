@@ -4,13 +4,20 @@
 @using Proyecto_Blog.Models
 @using Proyecto_Blog.View.Pages
 @inject NavigationManager navigation
+@rendermode InteractiveServer
 
-<BarraNavegacion />
+<BarraNavegacion Activo=mostrar/>
 
 <main id="principal">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
             <!--Personal, y se activa cuando se inicia sesion-->
+            <div style="position: fixed;">
+                @if (usuario != null)
+                {
+                    <VistaUsuario usuario=usuario />
+                }
+            </div>
         </div>
         <div class="col">
             @if (idUsuario != 0)
@@ -23,10 +30,16 @@
                     }
                 }
             }
-            <TarjetasComponentes />
+            <TarjetasComponentes IsVisible=DarValor />
         </div>
         <div class="col">
-            <!--Vista de las tarjetas-->
+            <div style="position: fixed;">
+                <!--Vista de las tarjetas-->
+                @if (tarjeta != null)
+                {
+                    <VistaTarjeta tarjetas=tarjeta />
+                }
+            </div>
         </div>
     </div>
 
@@ -35,8 +48,11 @@
 @code {
     [Parameter]
     public int idUsuario { get; set; }
+
+    private bool mostrar = false;
     private Usuario? usuario { get; set; }
     private string categoria = "";
+    private Tarjetas? tarjeta = null;
 
     protected override async Task OnInitializedAsync()
     {
@@ -45,8 +61,18 @@
 
         if (queryParams.TryGetValue("id", out var id))
         {
-            idUsuario = Int32.Parse(id);
+            idUsuario = Int32.Parse(id!);
             usuario = await new ControladorUsuario(new Usuario()).ObtenerDatos(idUsuario);
+            mostrar = true;
+        }
+    }
+
+    private void DarValor((bool, Tarjetas) valor)
+    {
+        mostrar = valor.Item1;
+        if (valor.Item2 != null)
+        {
+            tarjeta = valor.Item2;
         }
     }
 }

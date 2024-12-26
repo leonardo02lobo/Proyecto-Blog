@@ -7,6 +7,7 @@
     #tarjeta:hover {
         box-shadow: 30px 30px 30px #000;
         transition: .5s all;
+        cursor: pointer;
     }
 
     #etiqueta {
@@ -46,6 +47,7 @@
                     <div class="col d-flex">
                         <img style="border-radius: 50%; width: 40px;" src="/resource/avatar.png" alt="Avatar" />
                         <p class="card-text">@t.getPerfil()</p>
+                        <button type="button" class="btn btn-primary" @onclick=@(_=>MirarTarjeta(t))>Ver</button>
                     </div>
                 </div>
             </div>
@@ -54,6 +56,8 @@
 </div>
 
 @code {
+    [Parameter]
+    public EventCallback<(bool,Tarjetas)> IsVisible { get; set; }
     private string? categoria { get; set; }
     private List<Tarjetas> tarjetas = new List<Tarjetas>();
     ControladorTarjetas? controladorTarjetas = null;
@@ -104,5 +108,10 @@
             return;
         }
         tarjetasSegundarias = tarjetas.Where(t => t.getEtiquetas().Contains(valor)).ToList();
+    }
+
+    private void MirarTarjeta(Tarjetas t){
+        IsVisible.InvokeAsync((true,t));
+
     }
 }

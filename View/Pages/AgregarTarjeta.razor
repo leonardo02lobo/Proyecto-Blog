@@ -65,7 +65,7 @@
 
 
 @code {
-    [Parameter] public Usuario? datosSesionUsuario { get; set; }
+    [Parameter] public Usuario? datosSesionUsuario { get; set; } = null;
     private string etiqueta = "", titulo = "", descripcion = "", urlImagen = "";
     private bool band = false;
 
@@ -76,8 +76,11 @@
             band = true;
             return;
         }
-        ControladorTarjetas controladorTarjetas = new ControladorTarjetas(
-        new Tarjetas(etiqueta, titulo, descripcion, datosSesionUsuario.getNombreUsuario(), 0, urlImagen));
-        await controladorTarjetas.InsetarElementos();
+        if(datosSesionUsuario != null){
+            ControladorTarjetas controladorTarjetas = new ControladorTarjetas(
+            new Tarjetas(etiqueta, titulo, descripcion, datosSesionUsuario.getNombreUsuario(), 0, urlImagen));
+            await controladorTarjetas.InsetarElementos();
+        }
+        
     }
 }
