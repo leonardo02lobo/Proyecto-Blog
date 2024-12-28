@@ -6,7 +6,7 @@
 @inject NavigationManager navigation
 @rendermode InteractiveServer
 
-<BarraNavegacion Activo=mostrar/>
+<BarraNavegacion Activo=mostrar usuario=usuario ActivoChanged="ObtenerSesion"/>
 
 <main id="principal">
     <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -48,11 +48,15 @@
 @code {
     [Parameter]
     public int idUsuario { get; set; }
-
     private bool mostrar = false;
     private Usuario? usuario { get; set; }
-    private string categoria = "";
     private Tarjetas? tarjeta = null;
+
+    private void ObtenerSesion(bool band){
+        mostrar = band;
+        usuario = null;
+        tarjeta = null;
+    }
 
     protected override async Task OnInitializedAsync()
     {

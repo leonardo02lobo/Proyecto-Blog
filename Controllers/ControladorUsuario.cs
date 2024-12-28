@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using System.Data;
+using MySql.Data.MySqlClient;
 using Proyecto_Blog.Models;
 
 namespace Proyecto_Blog.Controllers
@@ -14,15 +15,24 @@ namespace Proyecto_Blog.Controllers
             this.usuario = usuario;
             conexion = new MySqlConnection(cadena.ObtenerConexion());
         }
-
         public void InicializarConexion()
         {
             conexion = new MySqlConnection(cadena?.ObtenerConexion());
+            if (conexion != null)
+            {
+                conexion.Open();
+            }
+        }
+        public void CerrarConexion()
+        {
+            if (conexion != null && conexion.State == ConnectionState.Open)
+            {
+                conexion.Close();
+            }
         }
 
         public async Task<bool> AgregarUsuario()
         {
-            conexion?.Open();
             string query = "insert into blog_prueba.usuarios(nombreUsuario,correo,contrasenia) values (?nombreUsuario,?correo,?contrasenia);";
             MySqlCommand command = new MySqlCommand(query, conexion);
             try
@@ -45,7 +55,7 @@ namespace Proyecto_Blog.Controllers
 
         public (bool, string, int) ValidarUsusario()
         {
-            conexion?.Open();
+            InicializarConexion();
             string query = $"select * from blog_prueba.usuarios where correo = ?correo and contrasenia  = ?contrasenia;";
             MySqlCommand command = new MySqlCommand(query, conexion);
 
@@ -73,8 +83,14 @@ namespace Proyecto_Blog.Controllers
             {
                 return (false, ex.Message, 0);
             }
-            finally { conexion?.Close(); }
-
+            catch (InvalidOperationException ex)
+            {
+                return (false, ex.Message, 0);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
         }
 
         public async Task<string> CambiarContrasenia()
@@ -86,7 +102,6 @@ namespace Proyecto_Blog.Controllers
             string query = "update blog_prueba.usuarios set contrasenia = ?contraseniaNueva where correo = ?correo;";
             try
             {
-                conexion?.Open();
                 using (MySqlCommand command = new MySqlCommand(query, conexion))
                 {
                     command.Parameters.Add("?contraseniaNueva", MySqlDbType.VarChar).Value = usuario?.getContraseniaEncriptada();
@@ -98,10 +113,6 @@ namespace Proyecto_Blog.Controllers
             catch (MySqlException e)
             {
                 return e.Message;
-            }
-            finally
-            {
-                conexion?.Close();
             }
         }
 
@@ -130,31 +141,42 @@ namespace Proyecto_Blog.Controllers
             {
                 return false;
             }
-            finally
-            {
-                conexion?.Close();
-            }
             return false;
         }
         public async Task<Usuario?> ObtenerDatos(int id)
         {
-            conexion?.Open();
+            InicializarConexion();
             string query = $"select * from blog_prueba.usuarios where id = ?id;";
             Usuario? usuario = new Usuario();
-            using (MySqlCommand command = new MySqlCommand(query, conexion))
+            try
             {
-                command.Parameters.Add("?id", MySqlDbType.Int32).Value = id;
-                using (MySqlDataReader reader = command.ExecuteReader())
+                using (MySqlCommand command = new MySqlCommand(query, conexion))
                 {
-                    while (await reader.ReadAsync())
+                    command.Parameters.Add("?id", MySqlDbType.Int32).Value = id;
+                    using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        usuario?.setId(reader.GetInt32(0));
-                        usuario?.setNombreUsuario(reader.GetString(1));
-                        usuario?.setCorreo(reader.GetString(2));
-                        usuario?.setContrasenia(reader.GetString(3));
-                        usuario?.setIniciado(true);
+                        while (await reader.ReadAsync())
+                        {
+                            usuario?.setId(reader.GetInt32(0));
+                            usuario?.setNombreUsuario(reader.GetString(1));
+                            usuario?.setCorreo(reader.GetString(2));
+                            usuario?.setContrasenia(reader.GetString(3));
+                            usuario?.setIniciado(true);
+                        }
                     }
                 }
+            }
+            catch (MySqlException)
+            {
+                return null;
+            }
+            catch (InvalidOperationException)
+            {
+                return null;
+            }
+            finally
+            {
+                CerrarConexion();
             }
             return usuario;
         }

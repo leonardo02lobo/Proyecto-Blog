@@ -1,0 +1,9 @@
+@page "/CerrarSesion"
+@inject NavigationManager navigation
+@rendermode InteractiveServer
+
+@code{
+    protected override void OnInitialized(){
+        navigation.NavigateTo("/");
+    }
+}

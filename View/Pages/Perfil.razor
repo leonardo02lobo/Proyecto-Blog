@@ -1,5 +1,8 @@
-﻿@using Proyecto_Blog.Models
-@inject IJSRuntime JS
+﻿@page "/Perfil"
+@using Proyecto_Blog.Controllers
+@using Proyecto_Blog.Models
+@inject NavigationManager navigation
+@rendermode InteractiveServer
 
 
 <div class="align-items-center m-4">
@@ -11,17 +14,17 @@
 			</div>
 			<div class="col">
 				<p style="margin:30px; font-size:20px;">Nombre: @usuario?.getNombreUsuario()</p>
-				<button id="miBoton1" type="submit" class="btn btn-primary" @onclick="Cambiar1">Cambiar Nombre Usuario</button>
+				<button id="miBoton1" type="submit" class="btn btn-primary" @onclick=@(_=> Cambiar("Nombre de Usuario"))>Cambiar Nombre Usuario</button>
 				<p style="margin:30px; font-size:20px;">Correo: @usuario?.getCorreo()</p>
-				<button id="miBoton2" type="submit" class="btn btn-primary" @onclick="Cambiar2">Cambiar Correo Electronico</button>
+				<button id="miBoton2" type="submit" class="btn btn-primary" @onclick=@(_=> Cambiar("Correo Electronico"))>Cambiar Correo Electronico</button>
 				<p style="margin:30px; font-size:20px;">Contraseña: @usuario?.getContraseniaEncriptada()</p>
-				<button id="miBoton3" type="submit" class="btn btn-primary" @onclick="Cambiar3">Cambiar Contraseña</button>
+				<button id="miBoton3" type="submit" class="btn btn-primary" @onclick=@(_=> Cambiar("Contraseña"))>Cambiar Contraseña</button>
 			</div>
 		</div>
 	</div>
 	@if (band)
 	{
-		<CambiarDatos datoCambiar=@texto usuarioSeleccionado="usuario" DatosGuardados="RecibirMensaje"/>
+		<CambiarDatos datoCambiar=@texto usuarioSeleccionado="usuario"/>
 	}
 </div>
 
@@ -34,24 +37,23 @@
 
 @code {
 	[Parameter] public Usuario? usuario { get; set; }
+
+	protected override async Task OnInitializedAsync()
+	{
+		int idUsuario = 0;
+		var uri = navigation.ToAbsoluteUri(navigation.Uri); // Obtener la URL completa
+		var queryParams = Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(uri.Query);
+		if (queryParams.ContainsKey("id"))
+		{
+			idUsuario = Convert.ToInt32(queryParams["id"]);
+			usuario = await new ControladorUsuario(new Usuario()) .ObtenerDatos(idUsuario);
+		}
+	}
 	private string texto { get; set; } = "";
 	private bool band = false;
 
-	private async Task Cambiar1(){
+	private void Cambiar(string texto){
+		this.texto = texto;
 		band = true;
-		texto = await JS.InvokeAsync<string>("getButtonText", "miBoton1");
-	}
-	private async Task Cambiar2(){
-		band = true;
-		texto = await JS.InvokeAsync<string>("getButtonText", "miBoton2");
-	}
-	private async Task Cambiar3()
-	{
-		band = true;
-		texto = await JS.InvokeAsync<string>("getButtonText", "miBoton3");
-	}
-
-	private void RecibirMensaje(bool band){
-		this.band = band;
 	}
 }

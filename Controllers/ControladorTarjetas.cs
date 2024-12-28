@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using System.Data;
+using MySql.Data.MySqlClient;
 using Proyecto_Blog.Models;
 
 namespace Proyecto_Blog.Controllers
@@ -17,16 +18,20 @@ namespace Proyecto_Blog.Controllers
         public void InicializarConexion()
         {
             conexion = new MySqlConnection(cadena?.ObtenerConexion());
+            if(conexion != null){
+                conexion.Open();
+            }
         }
         public void CerrarConexion()
         {
-            conexion?.Close();
+            if(conexion != null && conexion.State == ConnectionState.Open){
+                conexion.Close();
+            }
         }
         public async Task InsetarElementos()
         {
             try
             {
-                conexion?.Open();
                 string query = "insert into blog_prueba.tarjetas(etiqueta,titulo,descripcion,perfil,id,urlImagen) " +
                 "values (?etiqueta,?titulo,?descripcion,?perfil,?id,?urlImagen);";
 
@@ -45,14 +50,9 @@ namespace Proyecto_Blog.Controllers
             {
                 return;
             }
-            finally
-            {
-                conexion?.Close();
-            }
         }
         private int ObtenerIdPerfil()
         {
-            conexion?.Open();
             string query = "select id from blog_prueba.usuarios where nombreUsuario = ?nombreUsuario;";
             MySqlCommand command = new MySqlCommand(query, conexion);
             command.Parameters.Add("?nombreUsuario", MySqlDbType.VarChar).Value = tarjetas?.getPerfil();
@@ -74,10 +74,10 @@ namespace Proyecto_Blog.Controllers
         }
         public MySqlDataReader? AccederTablaTarjetas()
         {
+            InicializarConexion();
             string query = "SELECT * FROM blog_prueba.tarjetas;";
             try
             {
-                conexion?.Open();
                 MySqlCommand command = new MySqlCommand(query, conexion);
 
                 return command.ExecuteReader();
@@ -85,25 +85,19 @@ namespace Proyecto_Blog.Controllers
             catch (MySqlException)
             {
                 return null;
+            }catch(InvalidOperationException){
+                return null;
             }
         }
 
         public async Task ActualizarCampos(string NombreColumna, string opcion, string valor1, string valorOriginal)
         {
             string query = $"update blog_prueba.usuarios set {NombreColumna} = ?valorColumna where {opcion} = ?valorOriginal;";
-            conexion?.Open();
             MySqlCommand command = new MySqlCommand(query, conexion);
             command.Parameters.Add("?ValorColumna", MySqlDbType.VarChar).Value = valor1;
             command.Parameters.Add("?valorOriginal", MySqlDbType.VarChar).Value = valorOriginal;
 
             await command.ExecuteNonQueryAsync();
-        }
-    }
-
-    internal class MuySqlDataReader
-    {
-        public MuySqlDataReader()
-        {
         }
     }
 }

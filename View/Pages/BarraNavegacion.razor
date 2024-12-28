@@ -22,7 +22,7 @@
         }
         else
         {
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" @onchange="Cambiar">
                 <option selected>Informacion</option>
                 <option value="1">Perfil</option>
                 <option value="2">Cerrar Sesion</option>
@@ -34,4 +34,16 @@
 
 @code {
     [Parameter] public bool Activo { get; set; } = false;
+    [Parameter] public EventCallback<bool> ActivoChanged { get; set; }
+    [Parameter] public Usuario? usuario { get; set; }
+
+    private void Cambiar(ChangeEventArgs e){
+        if(e?.Value?.ToString() == "1"){
+            navigation.NavigateTo($"/Perfil?id={usuario?.getId()}");
+        }else{
+            navigation.NavigateTo("/CerrarSesion");
+            Activo = false;
+            ActivoChanged.InvokeAsync(Activo);
+        }
+    }
 }

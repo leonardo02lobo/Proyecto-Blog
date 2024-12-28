@@ -67,7 +67,13 @@
     protected override void OnInitialized()
     {
         controladorTarjetas = new ControladorTarjetas(new Tarjetas("", "", "", "", 0, ""));
-        rellenarList(controladorTarjetas.AccederTablaTarjetas());
+        try{
+             rellenarList(controladorTarjetas.AccederTablaTarjetas());
+        }catch(MySqlException e){
+            MensajeError = e.Message;
+        }catch(InvalidOperationException e){
+            MensajeError = e.Message;
+        }
     }
 
     private void rellenarList(MySqlDataReader? reader)

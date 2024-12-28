@@ -2,8 +2,9 @@
 @using Proyecto_Blog.Controllers
 @using Proyecto_Blog.Models
 
-<h3>@datoCambiar</h3>
+
 <div class="container border border-secondary" style="padding: 30px;">
+    <h3>@datoCambiar</h3>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Digite su nuevo valor a cambiar</label>
         <input type="text" @bind="valor1" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -19,40 +20,38 @@
 @code {
     [Parameter] public string? datoCambiar { get; set; }
     [Parameter] public Usuario? usuarioSeleccionado { get; set; }
-    [Parameter] public EventCallback<bool> DatosGuardados { get; set; }
     private string valor1 = "", valor2 = "", mensaje = "";
 
     private async Task EnviarDatosDatabase(){
-        usuarioSeleccionado?.AbrirConection();
         if(valor1 != valor2){
             mensaje = "Verificar si son iguales. Los datos que ingresaste no coinciden";
             return;
         }
-
         try
         {
-            (string NombreColumna, string opcion, string valorOriginal) = DeterminarValores(datoCambiar);
-            await new ControladorTarjetas(new Tarjetas("","","","",0,"")).ActualizarCampos(NombreColumna,opcion,valor1,valorOriginal);
+            if(datoCambiar != null){
+               (string NombreColumna, string opcion, string valorOriginal) = DeterminarValores(datoCambiar);
+                await new ControladorTarjetas(new Tarjetas("","","","",0,"")).ActualizarCampos(NombreColumna,opcion,valor1,valorOriginal); 
+            }
         }catch(InvalidOperationException e){
             mensaje = e.Message;
         }catch(MySqlException e){
             mensaje = e.Message;
         }
-        await DatosGuardados.InvokeAsync(false);
     }
     private (string,string,string) DeterminarValores(string dato){
         if (dato.Equals("Cambiar Nombre Usuario"))
         {
-            return ("NombreUsuario", "correo", usuarioSeleccionado.getCorreo());
+            return ("NombreUsuario", "correo", usuarioSeleccionado?.getCorreo()!);
         }
         else if (dato.Equals("Cambiar Correo Electronico"))
         {
-            return ("correo", "NombreUsuario", usuarioSeleccionado.getNombreUsuario());
+            return ("correo", "NombreUsuario", usuarioSeleccionado?.getNombreUsuario()!);
         }
         else if (dato.Equals("Cambiar Contraseña"))
         {
             valor1 = EncriptarContrasenia.EncriptarContraseña(valor1);
-            return ("contrasenia", "correo", usuarioSeleccionado.getCorreo());
+            return ("contrasenia", "correo", usuarioSeleccionado?.getCorreo()!);
         }
         return ("", "", "");
     }
