@@ -33,6 +33,7 @@ namespace Proyecto_Blog.Controllers
 
         public async Task<bool> AgregarUsuario()
         {
+            InicializarConexion();
             string query = "insert into blog_prueba.usuarios(nombreUsuario,correo,contrasenia) values (?nombreUsuario,?correo,?contrasenia);";
             MySqlCommand command = new MySqlCommand(query, conexion);
             try
@@ -46,10 +47,9 @@ namespace Proyecto_Blog.Controllers
             catch (Exception)
             {
                 return false;
-            }
-            finally
+            }finally
             {
-                conexion?.Close();
+                CerrarConexion();
             }
         }
 

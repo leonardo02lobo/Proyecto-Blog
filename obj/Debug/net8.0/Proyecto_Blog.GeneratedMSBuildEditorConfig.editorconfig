@@ -24,20 +24,36 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Components/BarraNavegacion.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld1xDb21wb25lbnRzXEJhcnJhTmF2ZWdhY2lvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Components/CambiarDatos.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld1xDb21wb25lbnRzXENhbWJpYXJEYXRvcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Components/RecuperarContrasenia.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld1xDb21wb25lbnRzXFJlY3VwZXJhckNvbnRyYXNlbmlhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Components/TarjetasComponentes.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld1xDb21wb25lbnRzXFRhcmpldGFzQ29tcG9uZW50ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Components/VistaTarjeta.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld1xDb21wb25lbnRzXFZpc3RhVGFyamV0YS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Components/VistaUsuario.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld1xDb21wb25lbnRzXFZpc3RhVXN1YXJpby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Layout/ContenidoHeader.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld1xMYXlvdXRcQ29udGVuaWRvSGVhZGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Pages/AgregarTarjeta.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld1xQYWdlc1xBZ3JlZ2FyVGFyamV0YS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Pages/BarraNavegacion.razor]
-build_metadata.AdditionalFiles.TargetPath = Vmlld1xQYWdlc1xCYXJyYU5hdmVnYWNpb24ucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Pages/CambiarDatos.razor]
-build_metadata.AdditionalFiles.TargetPath = Vmlld1xQYWdlc1xDYW1iaWFyRGF0b3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Pages/CerrarSesion.razor]
@@ -54,22 +70,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Pages/Perfil.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld1xQYWdlc1xQZXJmaWwucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Pages/RecuperarContrasenia.razor]
-build_metadata.AdditionalFiles.TargetPath = Vmlld1xQYWdlc1xSZWN1cGVyYXJDb250cmFzZW5pYS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Pages/TarjetasComponentes.razor]
-build_metadata.AdditionalFiles.TargetPath = Vmlld1xQYWdlc1xUYXJqZXRhc0NvbXBvbmVudGVzLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Pages/VistaTarjeta.razor]
-build_metadata.AdditionalFiles.TargetPath = Vmlld1xQYWdlc1xWaXN0YVRhcmpldGEucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Pages/VistaUsuario.razor]
-build_metadata.AdditionalFiles.TargetPath = Vmlld1xQYWdlc1xWaXN0YVVzdWFyaW8ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/equipo/Documents/Lenguajes de Programacion/C\#/PROYECTOS/Proyecto_Blog/Proyecto_Blog/View/Routes.razor]
