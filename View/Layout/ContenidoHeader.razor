@@ -7,16 +7,15 @@
 @inject NavigationManager navigation
 @rendermode InteractiveServer
 
-<BarraNavegacion Activo=mostrar usuario=usuario ActivoChanged="ObtenerSesion"/>
+<BarraNavegacion Activo=mostrar usuario=usuario ActivoChanged="ObtenerSesion" />
 
 <main id="principal">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-            <!--Personal, y se activa cuando se inicia sesion-->
             <div style="position: fixed;">
                 @if (usuario != null)
                 {
-                    <VistaUsuario usuario=usuario />
+                    <VistaUsuario />
                 }
             </div>
         </div>
@@ -35,7 +34,6 @@
         </div>
         <div class="col">
             <div style="position: fixed;">
-                <!--Vista de las tarjetas-->
                 @if (tarjeta != null)
                 {
                     <VistaTarjeta tarjetas=tarjeta />
@@ -53,7 +51,8 @@
     private Usuario? usuario { get; set; }
     private Tarjetas? tarjeta = null;
 
-    private void ObtenerSesion(bool band){
+    private void ObtenerSesion(bool band)
+    {
         mostrar = band;
         usuario = null;
         tarjeta = null;
@@ -61,14 +60,21 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var uri = navigation.ToAbsoluteUri(navigation.Uri); // Obtener la URL completa
-        var queryParams = Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(uri.Query);
-
-        if (queryParams.TryGetValue("id", out var id))
+        try
         {
-            idUsuario = Int32.Parse(id!);
-            usuario = await new ControladorUsuario(new Usuario()).ObtenerDatos(idUsuario);
-            mostrar = true;
+            var uri = navigation.ToAbsoluteUri(navigation.Uri); // Obtener la URL completa
+            var queryParams = Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(uri.Query);
+
+            if (queryParams.TryGetValue("id", out var id))
+            {
+                idUsuario = Int32.Parse(EncriptarDatos.Base64Decode(id!));
+                usuario = await new ControladorUsuario(new Usuario()).ObtenerDatos(idUsuario);
+                mostrar = true;
+            }
+        }
+        catch (Exception)
+        {
+            mostrar = false;
         }
     }
 
@@ -83,6 +89,6 @@
 
     private void Agregar()
     {
-        navigation.NavigateTo($"AgregarTarjeta?id={idUsuario}");
+        navigation.NavigateTo($"AgregarTarjeta?id={EncriptarDatos.Base64Encode(idUsuario.ToString())}");
     }
 }

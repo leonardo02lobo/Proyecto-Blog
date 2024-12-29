@@ -46,7 +46,10 @@
 		var queryParams = Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(uri.Query);
 		if (queryParams.ContainsKey("id"))
 		{
-			idUsuario = Convert.ToInt32(queryParams["id"]);
+			if (queryParams["id"].FirstOrDefault() is string id && !string.IsNullOrEmpty(id))
+			{
+				idUsuario = Convert.ToInt32(EncriptarDatos.Base64Decode(id));
+			}
 			usuario = await new ControladorUsuario(new Usuario()) .ObtenerDatos(idUsuario);
 		}
 	}

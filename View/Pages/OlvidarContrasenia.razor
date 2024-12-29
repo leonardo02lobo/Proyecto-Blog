@@ -1,0 +1,72 @@
+@page "/OlvideContrasenia"
+@using Proyecto_Blog.Controllers
+@using Proyecto_Blog.Models
+@inject NavigationManager navigation
+@rendermode InteractiveServer
+
+<div class="container mt-5">
+    <div class="custom-container">
+        <form @onsubmit="CambiarContrasenia">
+            <h3>Cambiar Contraseña</h3>
+            <p>La Contraseña Debe de tener al menos 8 caracteres</p>
+            <p>Correo: @correo</p>
+            <div class="mb-3">
+                <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">Ingrese la nueva contraseña</div>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" id="exampleInputPassword1">
+                <div id="emailHelp" class="form-text">Ingrese nuevamente la contraseña</div>
+            </div>
+            <button type="submit" class="btn btn-primary" @onclick="CambiarContrasenia">Cambiar Contraseña</button>
+            @if (band)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @Mensaje
+                </div>
+            }
+        </form>
+    </div>
+</div>
+
+@code {
+    private string contrasenia = "", contrasenia2 = "",Mensaje = "",correo = "";
+    private bool band = false;
+
+    protected override void OnInitialized()
+    {
+        var uri = navigation.ToAbsoluteUri(navigation.Uri);
+        var queryname = Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(uri.Query);
+
+        if(queryname.TryGetValue("correo",out var id)){
+            correo = EncriptarDatos.Base64Decode(id!);
+        }
+    }
+    private async Task CambiarContrasenia()
+    {
+        if (contrasenia != contrasenia2)
+        {
+            band = true;
+            Mensaje = "Las dos contraseña no coinciden. Intenta nuevamente!";
+            return;
+        }
+        if(DeterminarLongitudContrasenia()){
+            Mensaje = await new ControladorUsuario(new Usuario(0,"",correo,contrasenia)).CambiarContrasenia();
+        }
+
+        if(Mensaje == "Cambio exitoso"){
+            navigation.NavigateTo("/IniciarSesion");
+        }
+    }
+
+    private bool DeterminarLongitudContrasenia()
+    {
+        if (contrasenia.Length < 8)
+        {
+            band = true;
+            Mensaje = "La contraseña debe tener al menos 8 caracteres";
+            return false;
+        }
+        return true;
+    }
+}

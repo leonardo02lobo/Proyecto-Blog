@@ -77,7 +77,7 @@
         var queryname = Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(uri.Query);
 
         if(queryname.TryGetValue("id",out var id)){
-            int idUsuario = Int32.Parse(id!);
+            int idUsuario = Int32.Parse(EncriptarDatos.Base64Decode(id!));
             datosSesionUsuario = await new ControladorUsuario(new Usuario()).ObtenerDatos(idUsuario);
         }
     }
@@ -94,7 +94,7 @@
             ControladorTarjetas controladorTarjetas = new ControladorTarjetas(
             new Tarjetas(etiqueta, titulo, descripcion, datosSesionUsuario.getNombreUsuario(), datosSesionUsuario.getId(), urlImagen));
             await controladorTarjetas.InsetarElementos();
-            navigation.NavigateTo($"/?id={datosSesionUsuario.getId()}");
+            navigation.NavigateTo($"/?id={EncriptarDatos.Base64Encode(datosSesionUsuario.getId().ToString())}");
         }
         
     }

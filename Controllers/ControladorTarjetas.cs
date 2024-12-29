@@ -35,7 +35,7 @@ namespace Proyecto_Blog.Controllers
             try
             {
                 InicializarConexion();
-                string query = "insert into blog_prueba.tarjetas(etiqueta,titulo,descripcion,perfil,id,urlImagen) " +
+                string query = $"insert into {cadena?.ObtenerNombreDataBase()}.tarjetas(etiqueta,titulo,descripcion,perfil,id,urlImagen) " +
                 "values (?etiqueta,?titulo,?descripcion,?perfil,?id,?urlImagen);";
 
                 MySqlCommand command = new MySqlCommand(query, conexion);
@@ -61,7 +61,7 @@ namespace Proyecto_Blog.Controllers
         private int ObtenerIdPerfil()
         {
             InicializarConexion();
-            string query = "select id from blog_prueba.usuarios where nombreUsuario = ?nombreUsuario;";
+            string query = $"select id from {cadena?.ObtenerNombreDataBase()}.usuarios where nombreUsuario = ?nombreUsuario;";
             MySqlCommand command = new MySqlCommand(query, conexion);
             command.Parameters.Add("?nombreUsuario", MySqlDbType.VarChar).Value = tarjetas?.getPerfil();
             try
@@ -87,7 +87,7 @@ namespace Proyecto_Blog.Controllers
         public MySqlDataReader? AccederTablaTarjetas()
         {
             InicializarConexion();
-            string query = "SELECT * FROM blog_prueba.tarjetas;";
+            string query = $"SELECT * FROM {cadena?.ObtenerNombreDataBase()}.tarjetas;";
             try
             {
                 MySqlCommand command = new MySqlCommand(query, conexion);
@@ -107,7 +107,7 @@ namespace Proyecto_Blog.Controllers
         public async Task ActualizarCampos(string NombreColumna, string opcion, string valor1, string valorOriginal)
         {
             InicializarConexion();
-            string query = $"update blog_prueba.usuarios set {NombreColumna} = ?valorColumna where {opcion} = ?valorOriginal;";
+            string query = $"update {cadena?.ObtenerNombreDataBase()}.usuarios set {NombreColumna} = ?valorColumna where {opcion} = ?valorOriginal;";
             try
             {
                 MySqlCommand command = new MySqlCommand(query, conexion);

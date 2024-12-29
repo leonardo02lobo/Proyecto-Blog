@@ -34,7 +34,7 @@ namespace Proyecto_Blog.Controllers
         public async Task<bool> AgregarUsuario()
         {
             InicializarConexion();
-            string query = "insert into blog_prueba.usuarios(nombreUsuario,correo,contrasenia) values (?nombreUsuario,?correo,?contrasenia);";
+            string query = $"insert into {cadena?.ObtenerNombreDataBase()}.usuarios(nombreUsuario,correo,contrasenia) values (?nombreUsuario,?correo,?contrasenia);";
             MySqlCommand command = new MySqlCommand(query, conexion);
             try
             {
@@ -47,16 +47,17 @@ namespace Proyecto_Blog.Controllers
             catch (Exception)
             {
                 return false;
-            }finally
+            }
+            finally
             {
                 CerrarConexion();
             }
         }
 
-        public (bool, string, int) ValidarUsusario()
+        public (bool, string, int) ValidarUsuario()
         {
             InicializarConexion();
-            string query = $"select * from blog_prueba.usuarios where correo = ?correo and contrasenia  = ?contrasenia;";
+            string query = $"select * from {cadena?.ObtenerNombreDataBase()}.usuarios where correo = ?correo and contrasenia  = ?contrasenia;";
             MySqlCommand command = new MySqlCommand(query, conexion);
 
             command.Parameters.Add("?correo", MySqlDbType.VarChar).Value = usuario?.getCorreo();
@@ -99,9 +100,10 @@ namespace Proyecto_Blog.Controllers
             {
                 return "El correo no existe";
             }
-            string query = "update blog_prueba.usuarios set contrasenia = ?contraseniaNueva where correo = ?correo;";
+            string query = $"update {cadena?.ObtenerNombreDataBase()}.usuarios set contrasenia = ?contraseniaNueva where correo = ?correo;";
             try
             {
+                InicializarConexion();
                 using (MySqlCommand command = new MySqlCommand(query, conexion))
                 {
                     command.Parameters.Add("?contraseniaNueva", MySqlDbType.VarChar).Value = usuario?.getContraseniaEncriptada();
@@ -113,14 +115,22 @@ namespace Proyecto_Blog.Controllers
             catch (MySqlException e)
             {
                 return e.Message;
+            }catch(InvalidOperationException e)
+            {
+                return e.Message;
+            }
+            finally
+            {
+                CerrarConexion();
             }
         }
 
         private bool ValidarCorreo()
         {
-            string query = $"select count(*) from blog_prueba.usuarios where correo = ?correo";
+            string query = $"select count(*) from {cadena?.ObtenerNombreDataBase()}.usuarios where correo = ?correo";
             try
             {
+                InicializarConexion();
                 using (MySqlCommand command = new MySqlCommand(query, conexion))
                 {
                     command.Parameters.Add("?correo", MySqlDbType.VarChar).Value = usuario?.getCorreo();
@@ -141,12 +151,16 @@ namespace Proyecto_Blog.Controllers
             {
                 return false;
             }
+            finally
+            {
+                CerrarConexion();
+            }
             return false;
         }
         public async Task<Usuario?> ObtenerDatos(int id)
         {
             InicializarConexion();
-            string query = $"select * from blog_prueba.usuarios where id = ?id;";
+            string query = $"select * from {cadena?.ObtenerNombreDataBase()}.usuarios where id = ?id;";
             Usuario? usuario = new Usuario();
             try
             {
