@@ -3,16 +3,13 @@
 @inject NavigationManager navigation
 @rendermode InteractiveServer
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary" id="navegacion">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" id="navegacion" style="display: flex; justify-content: space-between;">
     <div class="d-flex align-items-center" href="/">
         <a class="navbar-brand d-flex align-items-center" href="#inicio" id="link-principal">
             <img width="48" height="48" src="https://img.icons8.com/color/48/google-blog-search.png"
                 alt="google-blog-search" />
             <p class="blog">Blog</p>
         </a>
-    </div>
-    <div class="d-flex mx-auto">
-        <input class="form-control me-2" type="search" placeholder="buscar">
     </div>
     <div class="d-flex gap-2">
         @if (!Activo)
@@ -36,14 +33,35 @@
     [Parameter] public bool Activo { get; set; } = false;
     [Parameter] public EventCallback<bool> ActivoChanged { get; set; }
     [Parameter] public Usuario? usuario { get; set; }
+    private string busqueda = "";
 
-    private void Cambiar(ChangeEventArgs e){
-        if(e?.Value?.ToString() == "1"){
-            navigation.NavigateTo($"/Perfil?id={usuario?.getId()}");
-        }else{
+    private void Cambiar(ChangeEventArgs e)
+    {
+        if (e?.Value?.ToString() == "1")
+        {
+            var userId = usuario?.getId().ToString();
+            if (!string.IsNullOrEmpty(userId))
+            {
+                navigation.NavigateTo($"/Perfil?id={EncriptarDatos.Base64Encode(userId)}");
+            }
+        }
+        else
+        {
             navigation.NavigateTo("/CerrarSesion");
             Activo = false;
             ActivoChanged.InvokeAsync(Activo);
+        }
+    }
+
+    private void Buscar(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            if (busqueda != "")
+            {
+                //aqui se tiene que enviar el dato al componente TarjetasComponentes
+                return;
+            }
         }
     }
 }

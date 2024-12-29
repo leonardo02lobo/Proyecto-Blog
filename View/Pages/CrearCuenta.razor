@@ -10,24 +10,27 @@
 
 <div class="container mt-5">
     <div class="custom-container">
-        <form @onsubmit="ValidarDatos">
-            <h3>Crear Cuenta</h3>
-            <div class="p-2 flex-fill">
-                <input type="text" @bind="nombreUsuario" class="form-control" id="nombreUsuario" placeholder="Usuario" required />
-                <div class="form-text">Debe ingresar su nombre de usuario</div>
-            </div>
-            <div class="p-2 flex-fill">
-                <label for="correo" class="form-label">Ingrese su correo electrónico</label>
-                <input type="email" @bind="correo" class="form-control" id="correo" placeholder="Correo electrónico" required />
-                <div class="form-text">Debe ingresar su correo electrónico</div>
-            </div>
-            <div class="p-2 flex-fill">
-                <label for="contrasenia" class="form-label">Ingrese su contraseña</label>
-                <input type="password" @bind="contrasenia" class="form-control" id="contrasenia" placeholder="Contraseña" required />
-                <div class="form-text">Debe ingresar su contraseña</div>
-            </div>
-            <button type="submit" class="btn btn-primary" @onclick="ValidarDatos">Crear Cuenta</button>
-        </form>
+        <h3>Crear Cuenta</h3>
+        <div class="p-2 flex-fill">
+            <input type="text" @bind="nombreUsuario" class="form-control" id="nombreUsuario" placeholder="Usuario"
+                required />
+            <div class="form-text">Debe ingresar su nombre de usuario</div>
+            <div class="from-text">@NombreDeUsuarioDebil</div>
+        </div>
+        <div class="p-2 flex-fill">
+            <label for="correo" class="form-label">Ingrese su correo electrónico</label>
+            <input type="email" @bind="correo" class="form-control" id="correo" placeholder="Correo electrónico"
+                required />
+            <div class="form-text">Debe ingresar su correo electrónico</div>
+        </div>
+        <div class="p-2 flex-fill">
+            <label for="contrasenia" class="form-label">Ingrese su contraseña</label>
+            <input type="password" @bind="contrasenia" class="form-control" id="contrasenia" placeholder="Contraseña"
+                required />
+            <div class="form-text">Debe ingresar su contraseña</div>
+            <div class="from-text">@ContraseniaDebil</div>
+        </div>
+        <button type="submit" class="btn btn-primary" @onclick="ValidarDatos">Crear Cuenta</button>
 
         @if (band)
         {
@@ -40,17 +43,23 @@
 </div>
 
 @code {
-    private string nombreUsuario = "", correo = "", contrasenia = "", Mensaje = "";
+    private string nombreUsuario = "", correo = "", contrasenia = "", Mensaje = "",
+    NombreDeUsuarioDebil = "El nombre de usuario debe tener al menos 10 caracteres.",
+    ContraseniaDebil = "La contraseña debe tener al menos 8 caracteres y un caracter especial.";
     private bool band = false;
     private ControladorUsuario? controladorUsuario = null;
 
     private async Task ValidarDatos()
     {
         band = false;
-        if (await ValidateData())
+        if (VerificarContrasenia() && VerificarNombreUsuario())
         {
-            Navigation.NavigateTo("/");
+            if (await ValidateData())
+            {
+                Navigation.NavigateTo("/");
+            }
         }
+
     }
 
     private async Task<bool> ValidateData()
@@ -89,5 +98,27 @@
     private bool validarCorreo()
     {
         return correo.EndsWith("@gmail.com");
+    }
+
+    private bool VerificarNombreUsuario()
+    {
+        if (nombreUsuario.Length < 10)
+        {
+            NombreDeUsuarioDebil = "El nombre de usuario debe tener al menos 10 caracteres.";
+            return false;
+        }
+        NombreDeUsuarioDebil = "";
+        return true;
+    }
+
+    private bool VerificarContrasenia()
+    {
+        if (contrasenia.Length < 8)
+        {
+            ContraseniaDebil = "La contraseña debe tener al menos 8 caracteres.";
+            return false;
+        }
+        ContraseniaDebil = "";
+        return true;
     }
 }

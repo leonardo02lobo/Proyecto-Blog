@@ -1,0 +1,1155 @@
+{
+  "Version": 1,
+  "Hash": "4BU3cwGWAUEITPWspGBSdlPWd47naGX2h3tH6xp+tr0=",
+  "Source": "Proyecto_Blog",
+  "BasePath": "_content/Proyecto_Blog",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Proyecto_Blog\\wwwroot",
+      "Source": "Proyecto_Blog",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "BasePath": "_content/Proyecto_Blog",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Release\\net8.0\\scopedcss\\bundle\\Proyecto_Blog.styles.css",
+      "SourceId": "Proyecto_Blog",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Release\\net8.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/Proyecto_Blog",
+      "RelativePath": "Proyecto_Blog#[.{fingerprint}]?.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "Fingerprint": "kmb8d01gdv",
+      "Integrity": "JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Release\\net8.0\\scopedcss\\bundle\\Proyecto_Blog.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\Proyecto_Blog.bundle.scp.css",
+      "SourceId": "Proyecto_Blog",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/Proyecto_Blog",
+      "RelativePath": "Proyecto_Blog#[.{fingerprint}]!.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "Fingerprint": "kmb8d01gdv",
+      "Integrity": "JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\Proyecto_Blog.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\anznznjk.440~",
+      "SourceId": "Proyecto_Blog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "BasePath": "_content/Proyecto_Blog",
+      "RelativePath": "anznznjk#[.{fingerprint}]?.440~",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gls889rg3p",
+      "Integrity": "PEFbBh+Ww+2niH10tOYkT/kXca+lNQgLvm5oqcSx3m4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\anznznjk.440~"
+    },
+    {
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\app.css",
+      "SourceId": "Proyecto_Blog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "BasePath": "_content/Proyecto_Blog",
+      "RelativePath": "app#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "uyxb5ftcsr",
+      "Integrity": "thEQbO81YjddKZtNKShSJkffOp6qxKKK2N9c9mvqgPQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\app.css"
+    },
+    {
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "SourceId": "Proyecto_Blog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "BasePath": "_content/Proyecto_Blog",
+      "RelativePath": "bootstrap/bootstrap.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bpk8xqwxhs",
+      "Integrity": "z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "SourceId": "Proyecto_Blog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "BasePath": "_content/Proyecto_Blog",
+      "RelativePath": "bootstrap/bootstrap.min.css#[.{fingerprint}]?.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8inm30yfxf",
+      "Integrity": "gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\favicon.png",
+      "SourceId": "Proyecto_Blog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "BasePath": "_content/Proyecto_Blog",
+      "RelativePath": "favicon#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ifv42okdf2",
+      "Integrity": "4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\avatar.png",
+      "SourceId": "Proyecto_Blog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "BasePath": "_content/Proyecto_Blog",
+      "RelativePath": "resource/avatar#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "926e9x8ofz",
+      "Integrity": "z5z2aOjiMk79YD4Hd9KurDJNkj8j2qeQBveThQvbY2M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\resource\\avatar.png"
+    },
+    {
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\lupa.png",
+      "SourceId": "Proyecto_Blog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "BasePath": "_content/Proyecto_Blog",
+      "RelativePath": "resource/lupa#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "70vxcss8tg",
+      "Integrity": "N1cayIdHCf9aej5UfCxY1I+9+wOlyX7BL5eDS2fuTFk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\resource\\lupa.png"
+    },
+    {
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\paisaje1.png",
+      "SourceId": "Proyecto_Blog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "BasePath": "_content/Proyecto_Blog",
+      "RelativePath": "resource/paisaje1#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1tudupaz7f",
+      "Integrity": "NR+BxYi4Lf0jbjX476YbFZD5tXIQDxeCIl6bcQ3ZKcs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\resource\\paisaje1.png"
+    },
+    {
+      "Identity": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\photo_2024-11-21_06-10-18.jpg",
+      "SourceId": "Proyecto_Blog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\",
+      "BasePath": "_content/Proyecto_Blog",
+      "RelativePath": "resource/photo_2024-11-21_06-10-18#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ekfhn19zsc",
+      "Integrity": "8is1wd7pWhK9tkt+Eiq+p395HFFfjzFkLWHrz/qao98=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\resource\\photo_2024-11-21_06-10-18.jpg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "anznznjk.440~",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\anznznjk.440~",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4083"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PEFbBh+Ww+2niH10tOYkT/kXca+lNQgLvm5oqcSx3m4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 08 Dec 2024 22:59:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PEFbBh+Ww+2niH10tOYkT/kXca+lNQgLvm5oqcSx3m4="
+        }
+      ]
+    },
+    {
+      "Route": "anznznjk.gls889rg3p.440~",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\anznznjk.440~",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4083"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PEFbBh+Ww+2niH10tOYkT/kXca+lNQgLvm5oqcSx3m4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 08 Dec 2024 22:59:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gls889rg3p"
+        },
+        {
+          "Name": "label",
+          "Value": "anznznjk.440~"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PEFbBh+Ww+2niH10tOYkT/kXca+lNQgLvm5oqcSx3m4="
+        }
+      ]
+    },
+    {
+      "Route": "app.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2995"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"thEQbO81YjddKZtNKShSJkffOp6qxKKK2N9c9mvqgPQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Dec 2024 15:28:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-thEQbO81YjddKZtNKShSJkffOp6qxKKK2N9c9mvqgPQ="
+        }
+      ]
+    },
+    {
+      "Route": "app.uyxb5ftcsr.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2995"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"thEQbO81YjddKZtNKShSJkffOp6qxKKK2N9c9mvqgPQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Dec 2024 15:28:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uyxb5ftcsr"
+        },
+        {
+          "Name": "label",
+          "Value": "app.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-thEQbO81YjddKZtNKShSJkffOp6qxKKK2N9c9mvqgPQ="
+        }
+      ]
+    },
+    {
+      "Route": "bootstrap/bootstrap.min.bpk8xqwxhs.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162720"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 27 Nov 2024 23:49:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bpk8xqwxhs"
+        },
+        {
+          "Name": "label",
+          "Value": "bootstrap/bootstrap.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg="
+        }
+      ]
+    },
+    {
+      "Route": "bootstrap/bootstrap.min.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162720"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 27 Nov 2024 23:49:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg="
+        }
+      ]
+    },
+    {
+      "Route": "bootstrap/bootstrap.min.css.8inm30yfxf.map",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "449111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 27 Nov 2024 23:49:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8inm30yfxf"
+        },
+        {
+          "Name": "label",
+          "Value": "bootstrap/bootstrap.min.css.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
+        }
+      ]
+    },
+    {
+      "Route": "bootstrap/bootstrap.min.css.map",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "449111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 27 Nov 2024 23:49:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.ifv42okdf2.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\favicon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1148"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 27 Nov 2024 23:49:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ifv42okdf2"
+        },
+        {
+          "Name": "label",
+          "Value": "favicon.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\favicon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1148"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 27 Nov 2024 23:49:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg="
+        }
+      ]
+    },
+    {
+      "Route": "Proyecto_Blog.bundle.scp.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\Proyecto_Blog.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2242"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 29 Dec 2024 13:41:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4="
+        }
+      ]
+    },
+    {
+      "Route": "Proyecto_Blog.kmb8d01gdv.bundle.scp.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\Proyecto_Blog.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2242"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 29 Dec 2024 13:41:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kmb8d01gdv"
+        },
+        {
+          "Name": "label",
+          "Value": "Proyecto_Blog.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4="
+        }
+      ]
+    },
+    {
+      "Route": "Proyecto_Blog.kmb8d01gdv.styles.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Release\\net8.0\\scopedcss\\bundle\\Proyecto_Blog.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2242"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 29 Dec 2024 13:41:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kmb8d01gdv"
+        },
+        {
+          "Name": "label",
+          "Value": "Proyecto_Blog.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4="
+        }
+      ]
+    },
+    {
+      "Route": "Proyecto_Blog.styles.css",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\obj\\Release\\net8.0\\scopedcss\\bundle\\Proyecto_Blog.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2242"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 29 Dec 2024 13:41:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JNaQXAlsqaT46i/E8M6GHz+ZWFYkb2mHNlC8umFy1b4="
+        }
+      ]
+    },
+    {
+      "Route": "resource/avatar.926e9x8ofz.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\avatar.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "64350"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z5z2aOjiMk79YD4Hd9KurDJNkj8j2qeQBveThQvbY2M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Dec 2024 20:29:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "926e9x8ofz"
+        },
+        {
+          "Name": "label",
+          "Value": "resource/avatar.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-z5z2aOjiMk79YD4Hd9KurDJNkj8j2qeQBveThQvbY2M="
+        }
+      ]
+    },
+    {
+      "Route": "resource/avatar.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\avatar.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "64350"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z5z2aOjiMk79YD4Hd9KurDJNkj8j2qeQBveThQvbY2M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Dec 2024 20:29:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-z5z2aOjiMk79YD4Hd9KurDJNkj8j2qeQBveThQvbY2M="
+        }
+      ]
+    },
+    {
+      "Route": "resource/lupa.70vxcss8tg.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\lupa.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "115376"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"N1cayIdHCf9aej5UfCxY1I+9+wOlyX7BL5eDS2fuTFk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Nov 2024 13:40:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "70vxcss8tg"
+        },
+        {
+          "Name": "label",
+          "Value": "resource/lupa.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-N1cayIdHCf9aej5UfCxY1I+9+wOlyX7BL5eDS2fuTFk="
+        }
+      ]
+    },
+    {
+      "Route": "resource/lupa.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\lupa.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "115376"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"N1cayIdHCf9aej5UfCxY1I+9+wOlyX7BL5eDS2fuTFk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Nov 2024 13:40:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-N1cayIdHCf9aej5UfCxY1I+9+wOlyX7BL5eDS2fuTFk="
+        }
+      ]
+    },
+    {
+      "Route": "resource/paisaje1.1tudupaz7f.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\paisaje1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8365298"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NR+BxYi4Lf0jbjX476YbFZD5tXIQDxeCIl6bcQ3ZKcs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Nov 2024 12:11:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1tudupaz7f"
+        },
+        {
+          "Name": "label",
+          "Value": "resource/paisaje1.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NR+BxYi4Lf0jbjX476YbFZD5tXIQDxeCIl6bcQ3ZKcs="
+        }
+      ]
+    },
+    {
+      "Route": "resource/paisaje1.png",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\paisaje1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8365298"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NR+BxYi4Lf0jbjX476YbFZD5tXIQDxeCIl6bcQ3ZKcs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Nov 2024 12:11:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NR+BxYi4Lf0jbjX476YbFZD5tXIQDxeCIl6bcQ3ZKcs="
+        }
+      ]
+    },
+    {
+      "Route": "resource/photo_2024-11-21_06-10-18.ekfhn19zsc.jpg",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\photo_2024-11-21_06-10-18.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133114"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8is1wd7pWhK9tkt+Eiq+p395HFFfjzFkLWHrz/qao98=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 21 Nov 2024 10:10:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ekfhn19zsc"
+        },
+        {
+          "Name": "label",
+          "Value": "resource/photo_2024-11-21_06-10-18.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8is1wd7pWhK9tkt+Eiq+p395HFFfjzFkLWHrz/qao98="
+        }
+      ]
+    },
+    {
+      "Route": "resource/photo_2024-11-21_06-10-18.jpg",
+      "AssetFile": "C:\\Users\\equipo\\Documents\\Lenguajes de Programacion\\C#\\PROYECTOS\\Proyecto_Blog\\Proyecto_Blog\\wwwroot\\resource\\photo_2024-11-21_06-10-18.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133114"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8is1wd7pWhK9tkt+Eiq+p395HFFfjzFkLWHrz/qao98=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 21 Nov 2024 10:10:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8is1wd7pWhK9tkt+Eiq+p395HFFfjzFkLWHrz/qao98="
+        }
+      ]
+    }
+  ]
+}
