@@ -3,6 +3,7 @@
 @using Proyecto_Blog.Controllers
 @using Proyecto_Blog.Models
 @rendermode InteractiveServer
+@inject NavigationManager navigation
 
 <style>
     #etiqueta {
@@ -39,6 +40,7 @@
                 <input type="text" @bind="etiqueta" class="form-control" id="exampleInputEmail1"
                     aria-describedby="emailHelp">
             </div>
+            <p>Mensaje: @Mensaje</p>
             <button type="submit" class="btn btn-primary" @onclick="Agregar">Agregar</button>
         </div>
         @if (band)
@@ -68,6 +70,17 @@
     [Parameter] public Usuario? datosSesionUsuario { get; set; } = null;
     private string etiqueta = "", titulo = "", descripcion = "", urlImagen = "";
     private bool band = false;
+    private string Mensaje = "";
+
+    protected override async Task OnInitializedAsync(){
+        var uri = navigation.ToAbsoluteUri(navigation.Uri);
+        var queryname = Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(uri.Query);
+
+        if(queryname.TryGetValue("id",out var id)){
+            int idUsuario = Int32.Parse(id!);
+            datosSesionUsuario = await new ControladorUsuario(new Usuario()).ObtenerDatos(idUsuario);
+        }
+    }
 
     private async Task Agregar()
     {
@@ -76,10 +89,12 @@
             band = true;
             return;
         }
+            Mensaje = datosSesionUsuario?.getNombreUsuario() ?? "Usuario desconocido";
         if(datosSesionUsuario != null){
             ControladorTarjetas controladorTarjetas = new ControladorTarjetas(
-            new Tarjetas(etiqueta, titulo, descripcion, datosSesionUsuario.getNombreUsuario(), 0, urlImagen));
+            new Tarjetas(etiqueta, titulo, descripcion, datosSesionUsuario.getNombreUsuario(), datosSesionUsuario.getId(), urlImagen));
             await controladorTarjetas.InsetarElementos();
+            navigation.NavigateTo($"/?id={datosSesionUsuario.getId()}");
         }
         
     }

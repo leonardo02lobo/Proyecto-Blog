@@ -49,7 +49,7 @@
         band = false;
         if (await ValidateData())
         {
-            Navigation.NavigateTo("/IniciarSesion");
+            Navigation.NavigateTo("/");
         }
     }
 
@@ -75,9 +75,8 @@
             controladorUsuario = new ControladorUsuario(new Usuario(0, nombreUsuario, correo, contrasenia));
             if (controladorUsuario != null)
             {
-                await controladorUsuario.AgregarUsuario();
+                return await controladorUsuario.AgregarUsuario();
             }
-            return true;
         }
         catch (MySqlException e)
         {

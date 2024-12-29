@@ -2,6 +2,7 @@
 
 @using Proyecto_Blog.Controllers
 @using Proyecto_Blog.Models
+@using Proyecto_Blog.View.Components
 @using Proyecto_Blog.View.Pages
 @inject NavigationManager navigation
 @rendermode InteractiveServer
@@ -26,7 +27,7 @@
                 {
                     @if (usuario.getIniciado())
                     {
-                        <NavLink class="btn btn-primary" href="/AgregarTarjeta">Agregar Nueva Tarjeta</NavLink>
+                        <button class="btn btn-primary" @onclick="Agregar">Agregar Nueva Tarjeta</button>
                     }
                 }
             }
@@ -78,5 +79,10 @@
         {
             tarjeta = valor.Item2;
         }
+    }
+
+    private void Agregar()
+    {
+        navigation.NavigateTo($"AgregarTarjeta?id={idUsuario}");
     }
 }
